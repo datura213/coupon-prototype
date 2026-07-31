@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>券批次详情 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="backend-surface">
+
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../../index.html"><span class="brand-mark">券</span><span>优惠券中台</span></a>
+        <a class="nav-item" href="../../pages/backend/budget-pools.html"><span>预算池管理</span></a>
+<a class="nav-item active" href="../../pages/backend/coupon-batches.html"><span>券批次管理</span></a>
+<a class="nav-item" href="../../pages/backend/approvals.html"><span>审批管理</span></a>
+<a class="nav-item" href="../../pages/backend/external-scenes.html"><span>外部发券场景</span></a>
+        <div class="nav-group-title">发放与查询</div>
+        <a class="nav-item" href="../../pages/backend/issue-tasks.html"><span>发放任务</span></a>
+<a class="nav-item" href="../../pages/backend/user-records.html"><span>用户券记录</span></a>
+<a class="nav-item" href="../../pages/backend/redeem-records.html"><span>核销记录</span></a>
+<a class="nav-item" href="../../pages/backend/config.html"><span>基础规则配置</span></a>
+        
+      </aside>
+      <section class="workspace">
+        <header class="topbar">
+          <div class="topbar-links"><a href="../../index.html">原型首页</a><a href="../../pages/app/coupon-center.html">App 侧原型</a></div>
+          <div class="operator"><span>原型预览</span><span class="avatar">券</span></div>
+        </header>
+        <main class="content">
+<div class="page-head">
+    <div><h1>券批次详情</h1><div class="sub">当前券批次待审核，审核通过前不可发布、领取或发放。</div></div>
+    <div class="btn-row"><a class="btn" href="../../pages/backend/coupon-batches.html" data-return-link>返回</a></div>
+  </div>
+<div class="grid-2 detail-single">
+  <section class="panel"><div class="panel-head"><span>基础信息</span><span class="tag amber">待审核</span></div><div class="panel-body detail-meta-grid"><div class="detail-meta-item"><span>券批次 ID</span><b>CB20260707001</b></div><div class="detail-meta-item"><span>券名称</span><b>平台通用满减券</b></div><div class="detail-meta-item"><span>权益类型</span><b>现金优惠券</b></div><div class="detail-meta-item"><span>券类型</span><b>固定抵扣券</b></div><div class="detail-meta-item"><span>关联预算池</span><b>平台通用预算池</b></div><div class="detail-meta-item"><span>成本归属</span><b>平台营销预算（继承预算池）</b></div><div class="detail-meta-item"><span>券批次活动时间</span><b>2026-07-10 至 2026-08-31</b></div><div class="detail-meta-item"><span>发放方式</span><b>外部自动发券</b></div><div class="detail-meta-item"><span>适用模式</span><b>全平台通用</b></div><div class="detail-meta-item"><span>业务场景</span><b>通钻购买、算力购买、电影票购买</b></div><div class="detail-meta-item"><span>抵扣金额</span><b>20.00 元</b></div><div class="detail-meta-item"><span>使用门槛</span><b>满 99.00 元可用</b></div><div class="detail-meta-item"><span>有效期类型</span><b>领取后 N 天</b></div><div class="detail-meta-item"><span>券有效期</span><b>领取后 7 天有效</b></div><div class="detail-meta-item"><span>批次预算上限</span><b>120,000.00 元</b></div><div class="detail-meta-item"><span>当前实际占用</span><b>0.00 元</b></div><div class="detail-meta-item"><span>批次剩余预算</span><b>120,000.00 元</b></div><div class="detail-meta-item"><span>每人限领</span><b>1 张</b></div><div class="detail-meta-item"><span>设备限领</span><b>1 张</b></div><div class="detail-meta-item full"><span>使用说明</span><b>一期平台券单个订单仅可使用一张，且不可与业务线其他活动叠加。</b></div><div class="detail-meta-item"><span>审批单号</span><b>APR-20260707-1842</b></div><div class="detail-meta-item"><span>审批状态</span><b>待审核</b></div><div class="detail-meta-item"><span>审核人</span><b>-</b></div><div class="detail-meta-item"><span>审核时间</span><b>-</b></div><div class="detail-meta-item"><span>审批图片</span><b><span class="link" data-open-modal="#pendingApprovalImage">查看审批图片</span></b></div></div></section>
+</div>
+
+<section class="panel" style="margin-top:14px;"><div class="panel-head">库存信息</div><div class="panel-body desc-list"><div class="desc-row"><span>总库存</span><b>6,000 张</b></div><div class="desc-row"><span>已发放数量</span><b>0 张</b></div><div class="desc-row"><span>剩余库存</span><b>6,000 张</b></div></div></section>
+<div class="modal-mask" id="pendingApprovalImage">
+    <section class="modal">
+      <div class="panel-head"><span>审批图片</span><button class="btn" data-close-modal>关闭</button></div>
+      <div class="panel-body stack"><div class="upload"><b>approval-proof.png</b><div class="hint">审批图片预览区域</div></div></div>
+    </section>
+  </div>
+</main>
+      </section>
+    </div>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
