@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>新增发放任务 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="backend-surface">
+
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../../index.html"><span class="brand-mark">券</span><span>优惠券中台</span></a>
+        <a class="nav-item" href="../../pages/backend/budget-pools.html"><span>预算池管理</span></a>
+<a class="nav-item" href="../../pages/backend/coupon-batches.html"><span>券批次管理</span></a>
+<a class="nav-item" href="../../pages/backend/approvals.html"><span>审批管理</span></a>
+<a class="nav-item" href="../../pages/backend/external-scenes.html"><span>外部发券场景</span></a>
+        <div class="nav-group-title">发放与查询</div>
+        <a class="nav-item active" href="../../pages/backend/issue-tasks.html"><span>发放任务</span></a>
+<a class="nav-item" href="../../pages/backend/user-records.html"><span>用户券记录</span></a>
+<a class="nav-item" href="../../pages/backend/redeem-records.html"><span>核销记录</span></a>
+<a class="nav-item" href="../../pages/backend/config.html"><span>基础规则配置</span></a>
+        
+      </aside>
+      <section class="workspace">
+        <header class="topbar">
+          <div class="topbar-links"><a href="../../index.html">原型首页</a><a href="../../pages/app/coupon-center.html">App 侧原型</a></div>
+          <div class="operator"><span>原型预览</span><span class="avatar">券</span></div>
+        </header>
+        <main class="content">
+<div class="page-head">
+    <div><h1>新增发放任务</h1><div class="sub">运营录入任务名称、目标券批次和用户清单后直接提交，系统创建任务并在执行时完成校验。</div></div>
+    <div class="btn-row"><a class="btn" href="../../pages/backend/issue-tasks.html" data-return-link>取消</a><button class="btn primary" data-toast="发放任务已创建并开始执行" data-return-redirect="../../pages/backend/issue-tasks.html">提交发放任务</button></div>
+  </div>
+<div class="stack" data-coupon-batch-form data-issue-task-form>
+    <section class="panel"><div class="panel-head">任务信息</div><div class="panel-body form-grid">
+      <input type="hidden" data-issue-method value="运营定向发券">
+      <div class="field full"><label class="required">任务名称</label><input value="客服补偿名单发放" placeholder="请输入任务名称"><div class="hint">仅用于运营主动发券任务的查询与追溯。</div></div>
+      <div class="field full"><label class="required">目标券批次</label><select><option>CB20260709015 平台定向补贴券（进行中）</option></select><div class="hint">仅展示发放方式为运营定向发券、审核通过、状态为进行中且预算池为启用的券批次。</div></div>
+      <div class="field"><label>券名称</label><input value="平台定向补贴券" readonly></div>
+      <div class="field"><label>预算池</label><input value="平台通用预算池（启用）" readonly></div>
+      <div class="field"><label>批次剩余预算</label><input value="80,100.00 元" readonly></div>
+      <div class="field"><label>剩余库存</label><input value="4,802 张" readonly></div>
+      <div class="field full"><label>任务备注</label><textarea>客服补偿名单定向发放。</textarea></div>
+    </div></section>
+    <section class="panel"><div class="panel-head">发放对象</div><div class="panel-body form-grid">
+      <div class="field"><label class="required">录入方式</label><select data-direct-target-mode><option value="upload">上传用户 ID 清单</option><option value="manual">手动录入用户 ID</option></select></div>
+      <div class="field full" data-direct-target-panel="upload"><label class="required">上传用户 ID 清单</label><div class="btn-row" style="margin-bottom:8px;"><button class="btn" data-toast="Excel 模板已开始下载">下载 Excel 模板</button></div><div class="upload"><b>target-users.xlsx</b><div class="hint">上传 Excel 文件，首列为 user_id，已识别 120 个用户</div></div></div>
+      <div class="field full" data-direct-target-panel="manual" hidden><label class="required">手动录入用户 ID</label><textarea placeholder="u_10001,u_10002,u_10003">u_990001,u_990002,u_990099</textarea><div class="hint">多个用户 ID 使用英文逗号分隔。</div></div>
+    </div></section>
+</div>
+</main>
+      </section>
+    </div>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
