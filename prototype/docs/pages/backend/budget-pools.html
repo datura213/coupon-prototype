@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>预算池管理 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="backend-surface">
+
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../../index.html"><span class="brand-mark">券</span><span>优惠券中台</span></a>
+        <a class="nav-item active" href="../../pages/backend/budget-pools.html"><span>预算池管理</span></a>
+<a class="nav-item" href="../../pages/backend/coupon-batches.html"><span>券批次管理</span></a>
+<a class="nav-item" href="../../pages/backend/approvals.html"><span>审批管理</span></a>
+<a class="nav-item" href="../../pages/backend/external-scenes.html"><span>外部发券场景</span></a>
+        <div class="nav-group-title">发放与查询</div>
+        <a class="nav-item" href="../../pages/backend/issue-tasks.html"><span>发放任务</span></a>
+<a class="nav-item" href="../../pages/backend/user-records.html"><span>用户券记录</span></a>
+<a class="nav-item" href="../../pages/backend/redeem-records.html"><span>核销记录</span></a>
+<a class="nav-item" href="../../pages/backend/config.html"><span>基础规则配置</span></a>
+        
+      </aside>
+      <section class="workspace">
+        <header class="topbar">
+          <div class="topbar-links"><a href="../../index.html">原型首页</a><a href="../../pages/app/coupon-center.html">App 侧原型</a></div>
+          <div class="operator"><span>原型预览</span><span class="avatar">券</span></div>
+        </header>
+        <main class="content">
+<div class="page-head">
+    <div><h1>预算池管理</h1><div class="sub">预算池按预算周期进入待开始、启用或已结束；待开始可提前创建批次，启用后才参与实际发券。</div></div>
+    <div class="btn-row"><a class="btn primary" href="../../pages/backend/budget-pool-form.html?return=budget-pools">新建预算池</a></div>
+  </div>
+<div class="filter-bar" style="margin-top:14px;"><input value="预算池名称 / ID"><select><option>全部状态</option><option>待审核</option><option>审核驳回</option><option>待开始</option><option>启用</option><option>停用</option><option>已结束</option><option>已关闭</option></select><input value="负责人"><button class="btn primary btn-query" type="button" data-list-filter-action>查询</button></div>
+<section class="panel">
+  <div class="panel-head">预算池列表</div>
+  <div class="table-scroll" data-scroll-hint="左右滑动查看更多字段"><table class="data-table action-table" style="--table-min-width:1716px">
+    <tr><th>预算池 ID</th><th>预算池名称</th><th>成本归属</th><th>预算周期</th><th>总额</th><th>已分配计划额度</th><th>可分配计划额度</th><th>预算已核销成本</th><th>未结清预算占用</th><th>预算已承诺总额</th><th>实际剩余可用预算</th><th>状态</th><th>操作</th></tr>
+    <tr><td>BP20260707001</td><td>平台通用营销预算池</td><td>平台</td><td>2026-07-10 至 2026-08-31</td><td>500,000.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>500,000.00</td><td><span class="tag amber">待审核</span></td><td><a class="link" href="../../pages/backend/budget-pool-detail-pending.html?return=budget-pools">详情</a></td></tr>
+    <tr><td>BP20260709002</td><td>8 月新人预算池</td><td>通钻购买</td><td>2026-08-01 至 2026-08-31</td><td>300,000.00</td><td>120,000.00</td><td>180,000.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>300,000.00</td><td><span class="tag amber">待开始</span></td><td><a class="link" href="../../pages/backend/budget-pool-detail-upcoming.html?return=budget-pools">详情</a><a class="link" href="../../pages/backend/budget-pool-increase-form.html?pool=BP20260709002&return=budget-pools">增加预算</a><span class="link" data-open-modal="#disablePool">停用</span></td></tr>
+    <tr><td>BP20260701009</td><td>平台通用预算池</td><td>平台</td><td>2026-07-10 至 2026-08-31</td><td>800,000.00</td><td>720,000.00</td><td>80,000.00</td><td>256,500.00</td><td>48,000.00</td><td>304,500.00</td><td>495,500.00</td><td><span class="tag green">启用</span></td><td><a class="link" href="../../pages/backend/budget-pool-detail.html?return=budget-pools">详情</a><a class="link" href="../../pages/backend/budget-pool-increase-form.html?pool=BP20260701009&return=budget-pools">增加预算</a><span class="link" data-open-modal="#disablePool">停用</span></td></tr>
+    <tr><td>BP20260628003</td><td>平台通用预算池</td><td>平台</td><td>2026-06-01 至 2026-08-15</td><td>120,000.00</td><td>50,000.00</td><td>70,000.00</td><td>12,000.00</td><td>20,000.00</td><td>32,000.00</td><td>88,000.00</td><td><span class="tag blue">停用</span></td><td><a class="link" href="../../pages/backend/budget-pool-detail-disabled.html?return=budget-pools">详情</a><span class="link" data-open-modal="#enablePool">启用</span></td></tr>
+    <tr><td>BP20260501001</td><td>5 月活动预算池</td><td>平台</td><td>2026-05-01 至 2026-05-31</td><td>200,000.00</td><td>0.00</td><td>0.00</td><td>72,000.00</td><td>0.00</td><td>72,000.00</td><td>128,000.00</td><td><span class="tag gray">已结束</span></td><td><a class="link" href="../../pages/backend/budget-pool-detail-ended.html?return=budget-pools">详情</a></td></tr>
+    <tr><td>BP20260401001</td><td>4 月拉新预算池</td><td>平台</td><td>2026-04-01 至 2026-04-30</td><td>100,000.00</td><td>0.00</td><td>0.00</td><td>64,000.00</td><td>0.00</td><td>64,000.00</td><td>36,000.00</td><td><span class="tag gray">已关闭</span></td><td><a class="link" href="../../pages/backend/budget-pool-detail-closed.html?return=budget-pools">详情</a></td></tr>
+  </table></div>
+</section>
+<div class="modal-mask" id="disablePool">
+    <section class="modal">
+      <div class="panel-head"><span>停用预算池确认</span><button class="btn" data-close-modal>关闭</button></div>
+      <div class="panel-body stack"><div class="alert">停用后，该预算池下已关联的待开始、进行中批次不可继续发券、领券或外部自动发券；已发用户券和历史记录不删除。</div><textarea placeholder="请输入停用原因，必填"></textarea><div class="btn-row"><button class="btn" data-close-modal>取消</button><button class="btn primary" data-toast="预算池已停用并记录审计">确认停用</button></div></div>
+    </section>
+  </div>
+<div class="modal-mask" id="enablePool">
+    <section class="modal">
+      <div class="panel-head"><span>启用预算池确认</span><button class="btn" data-close-modal>关闭</button></div>
+      <div class="panel-body stack"><div class="alert">启用前系统需校验预算池未关闭、预算周期未结束、基础信息完整且当前账号具备权限；通过后按预算周期恢复为待开始或启用。</div><div class="btn-row"><button class="btn" data-close-modal>取消</button><button class="btn primary" data-toast="预算池已按预算周期恢复状态并记录审计">确认启用</button></div></div>
+    </section>
+  </div>
+</main>
+      </section>
+    </div>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
