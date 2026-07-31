@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>编辑券批次 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="backend-surface">
+
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../../index.html"><span class="brand-mark">券</span><span>优惠券中台</span></a>
+        <a class="nav-item" href="../../pages/backend/budget-pools.html"><span>预算池管理</span></a>
+<a class="nav-item active" href="../../pages/backend/coupon-batches.html"><span>券批次管理</span></a>
+<a class="nav-item" href="../../pages/backend/approvals.html"><span>审批管理</span></a>
+<a class="nav-item" href="../../pages/backend/external-scenes.html"><span>外部发券场景</span></a>
+        <div class="nav-group-title">发放与查询</div>
+        <a class="nav-item" href="../../pages/backend/issue-tasks.html"><span>发放任务</span></a>
+<a class="nav-item" href="../../pages/backend/user-records.html"><span>用户券记录</span></a>
+<a class="nav-item" href="../../pages/backend/redeem-records.html"><span>核销记录</span></a>
+<a class="nav-item" href="../../pages/backend/config.html"><span>基础规则配置</span></a>
+        
+      </aside>
+      <section class="workspace">
+        <header class="topbar">
+          <div class="topbar-links"><a href="../../index.html">原型首页</a><a href="../../pages/app/coupon-center.html">App 侧原型</a></div>
+          <div class="operator"><span>原型预览</span><span class="avatar">券</span></div>
+        </header>
+        <main class="content">
+<div class="page-head">
+    <div><h1>编辑券批次</h1><div class="sub">修改驳回的券批次配置后重新提交审核。</div></div>
+    <div class="btn-row"><a class="btn" href="../../pages/backend/coupon-batches.html" data-return-link>取消</a><button class="btn primary" data-toast="已重新提交券批次审核" data-return-redirect="../../pages/backend/approvals.html">重新提交审核</button></div>
+  </div>
+<section class="panel"><div class="panel-head">驳回原因</div><div class="panel-body"><div class="alert">适用范围与券规则描述不一致，请确认折扣规则、指定业务线和活动时间后重新提交。</div></div></section>
+<div class="stack" style="margin-top:14px;">
+  <section class="panel"><div class="panel-head">基础信息</div><div class="panel-body form-grid"><div class="field"><label>券名称</label><input value="平台通用折扣券"></div><div class="field"><label>关联预算池</label><input value="平台通用预算池" readonly></div><div class="field"><label>券批次活动时间</label><input value="2026-07-01 至 2026-07-31"></div><div class="field"><label>发放方式</label><select><option selected>运营定向发券</option></select></div></div></section>
+  <section class="panel"><div class="panel-head">适用范围</div><div class="panel-body form-grid"><div class="field full"><label>适用范围</label><input value="指定业务线：通钻购买"></div></div></section>
+  <section class="panel"><div class="panel-head">券规则与有效期</div><div class="panel-body form-grid"><div class="field"><label>折扣比例</label><input value="8.0 折"></div><div class="field"><label>最高抵扣金额</label><input value="30.00 元"></div><div class="field"><label>使用门槛</label><input value="满 99.00 元可用"></div><div class="field"><label>券有效期</label><input value="2026-07-01 至 2026-07-31"></div></div></section>
+  <section class="panel"><div class="panel-head">预算与库存</div><div class="panel-body form-grid"><div class="field"><label>总库存</label><input value="2,000"></div><div class="field"><label>批次预算上限</label><input value="80,000.00 元" readonly></div></div></section>
+  <section class="panel"><div class="panel-head">领取限制</div><div class="panel-body form-grid"><div class="field"><label>每人限领</label><input value="1"></div><div class="field"><label>设备限领</label><input value="1"></div></div></section>
+  <section class="panel"><div class="panel-head">审批信息</div><div class="panel-body form-grid"><div class="field"><label>审批单号</label><input value="APR-20260629-1910"></div><div class="field"><label>审批图片</label><div class="upload"><b>discount-coupon-proof.png</b></div></div></div></section>
+</div>
+</main>
+      </section>
+    </div>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
