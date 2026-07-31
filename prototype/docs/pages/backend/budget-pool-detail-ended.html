@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>预算池详情 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="backend-surface">
+
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../../index.html"><span class="brand-mark">券</span><span>优惠券中台</span></a>
+        <a class="nav-item active" href="../../pages/backend/budget-pools.html"><span>预算池管理</span></a>
+<a class="nav-item" href="../../pages/backend/coupon-batches.html"><span>券批次管理</span></a>
+<a class="nav-item" href="../../pages/backend/approvals.html"><span>审批管理</span></a>
+<a class="nav-item" href="../../pages/backend/external-scenes.html"><span>外部发券场景</span></a>
+        <div class="nav-group-title">发放与查询</div>
+        <a class="nav-item" href="../../pages/backend/issue-tasks.html"><span>发放任务</span></a>
+<a class="nav-item" href="../../pages/backend/user-records.html"><span>用户券记录</span></a>
+<a class="nav-item" href="../../pages/backend/redeem-records.html"><span>核销记录</span></a>
+<a class="nav-item" href="../../pages/backend/config.html"><span>基础规则配置</span></a>
+        
+      </aside>
+      <section class="workspace">
+        <header class="topbar">
+          <div class="topbar-links"><a href="../../index.html">原型首页</a><a href="../../pages/app/coupon-center.html">App 侧原型</a></div>
+          <div class="operator"><span>原型预览</span><span class="avatar">券</span></div>
+        </header>
+        <main class="content">
+<div class="page-head">
+    <div><h1>预算池详情</h1><div class="sub">预算周期已结束，已核销成本保留；未结清预算占用为零后可关闭预算池。</div></div>
+    <div class="btn-row"><button class="btn soft-red" data-open-modal="#closeEndedPool">关闭预算池</button><a class="btn" href="../../pages/backend/budget-pools.html" data-return-link>返回</a></div>
+  </div>
+<div class="grid-2 detail-single">
+  <section class="panel"><div class="panel-head"><span>基础信息</span><span class="tag gray">已结束</span></div><div class="panel-body desc-list">
+    <div class="desc-row"><span>预算池 ID</span><b>BP20260501001</b></div>
+    <div class="desc-row"><span>预算池名称</span><b>5 月活动预算池</b></div>
+    <div class="desc-row"><span>预算周期</span><b>2026-05-01 至 2026-05-31</b></div>
+    <div class="desc-row"><span>预算池总额</span><b>200,000.00 元</b></div>
+    <div class="desc-row"><span>已分配计划额度</span><b>0.00 元</b></div>
+    <div class="desc-row"><span>可分配计划额度</span><b>0.00 元</b></div>
+    <div class="desc-row"><span>预算已核销成本</span><b>72,000.00 元</b></div>
+    <div class="desc-row"><span>未结清预算占用</span><b>0.00 元</b></div>
+    <div class="desc-row"><span>预算已承诺总额</span><b>72,000.00 元</b></div>
+    <div class="desc-row"><span>实际剩余可用预算</span><b>128,000.00 元</b></div>
+    <div class="desc-row"><span>审批单号</span><b>APR-20260501-0900</b></div>
+  </div></section>
+</div>
+<section class="panel" style="margin-top:14px;"><div class="panel-head">已关联券批次</div><div class="table-scroll" data-scroll-hint="左右滑动查看更多字段"><table class="data-table" style="--table-min-width:924px"><tr><th>券批次 ID</th><th>券名称</th><th>状态</th><th>批次预算上限</th><th>预算已承诺总额</th><th>券批次活动时间</th><th>券有效期</th></tr><tr><td>CB20260501005</td><td>5 月活动满减券</td><td><span class="tag gray">已过期</span></td><td>80,000.00</td><td>0.00</td><td>2026-05-01 至 2026-05-31</td><td>2026-05-01 至 2026-05-31</td></tr></table></div></section>
+<div class="modal-mask" id="closeEndedPool">
+    <section class="modal">
+      <div class="panel-head"><span>关闭预算池确认</span><button class="btn" data-close-modal>关闭</button></div>
+      <div class="panel-body stack"><div class="alert">该预算池已无待审核、待开始、进行中或停用批次，未结清预算占用为 0。关闭后不再允许新建批次、增加预算或通过存量申请；历史核销成本、预算流水和统计保留。</div><textarea data-budget-pool-close-reason placeholder="请输入关闭原因，必填"></textarea><div class="inline-error" data-budget-pool-close-error hidden>请填写关闭原因后再确认。</div><div class="btn-row"><button class="btn" data-close-modal>取消</button><button class="btn primary" data-budget-pool-close data-toast="预算池已关闭并记录审计" data-redirect="../../pages/backend/budget-pool-detail-closed.html">确认关闭</button></div></div>
+    </section>
+  </div>
+</main>
+      </section>
+    </div>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
