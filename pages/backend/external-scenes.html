@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>外部发券场景管理 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="backend-surface">
+
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../../index.html"><span class="brand-mark">券</span><span>优惠券中台</span></a>
+        <a class="nav-item" href="../../pages/backend/budget-pools.html"><span>预算池管理</span></a>
+<a class="nav-item" href="../../pages/backend/coupon-batches.html"><span>券批次管理</span></a>
+<a class="nav-item" href="../../pages/backend/approvals.html"><span>审批管理</span></a>
+<a class="nav-item active" href="../../pages/backend/external-scenes.html"><span>外部发券场景</span></a>
+        <div class="nav-group-title">发放与查询</div>
+        <a class="nav-item" href="../../pages/backend/issue-tasks.html"><span>发放任务</span></a>
+<a class="nav-item" href="../../pages/backend/user-records.html"><span>用户券记录</span></a>
+<a class="nav-item" href="../../pages/backend/redeem-records.html"><span>核销记录</span></a>
+<a class="nav-item" href="../../pages/backend/config.html"><span>基础规则配置</span></a>
+        
+      </aside>
+      <section class="workspace">
+        <header class="topbar">
+          <div class="topbar-links"><a href="../../index.html">原型首页</a><a href="../../pages/app/coupon-center.html">App 侧原型</a></div>
+          <div class="operator"><span>原型预览</span><span class="avatar">券</span></div>
+        </header>
+        <main class="content">
+<div class="page-head">
+    <div><h1>外部发券场景管理</h1><div class="sub">外部系统按 source_system + issue_scene_code 调用，优惠券中台内部匹配绑定券批次。</div></div>
+    <div class="btn-row"><a class="btn primary" href="../../pages/backend/external-scene-form.html?return=external-scenes">新建场景</a></div>
+  </div>
+<div class="filter-bar" style="grid-template-columns: 1fr 1fr 1fr .85fr .85fr auto;"><select><option>全部接入系统</option><option>平台系统（platform_system）</option><option>增长系统（growth_system）</option><option>会员系统（member_system）</option></select><input value="发券场景编码"><input value="场景名称"><select><option>全部启停状态</option><option>启用</option><option>停用</option></select><select><option>全部时间态</option><option>未生效</option><option>生效中</option><option>已结束</option></select><button class="btn primary btn-query" type="button" data-list-filter-action>查询</button></div>
+<section class="panel"><div class="panel-head">场景列表</div><div class="table-scroll" data-scroll-hint="左右滑动查看更多字段"><table class="data-table action-table" style="--table-min-width:1188px"><tr><th>接入系统</th><th>发券场景编码</th><th>场景名称</th><th>绑定券批次</th><th>启停状态</th><th>时间态</th><th>生效时间</th><th>最近调用结果</th><th>操作</th></tr><tr><td>平台系统<br><span class="hint">platform_system</span></td><td>coupon_issue_standard</td><td>通用发券场景</td><td>CB20260708021</td><td><span class="tag green">启用</span></td><td><span class="tag green">生效中</span></td><td>2026-07-08 至 2026-08-31</td><td><span class="tag green">成功</span></td><td><a class="link" href="../../pages/backend/external-scene-detail.html?return=external-scenes">详情</a><a class="link" href="../../pages/backend/external-scene-edit.html?return=external-scenes">编辑</a><span class="link" data-open-modal="#disableScene">停用</span></td></tr><tr><td>增长系统<br><span class="hint">growth_system</span></td><td>new_user_register_202607</td><td>7 月新人注册自动发券</td><td>CB20260708021</td><td><span class="tag green">启用</span></td><td><span class="tag amber">未生效</span></td><td>2026-07-10 至 2026-08-31</td><td>-</td><td><a class="link" href="../../pages/backend/external-scene-detail-new-user-register.html?return=external-scenes">详情</a><a class="link" href="../../pages/backend/external-scene-edit-new-user-register.html?return=external-scenes">编辑</a><span class="link" data-open-modal="#disableScene">停用</span></td></tr><tr><td>增长系统<br><span class="hint">growth_system</span></td><td>new_user_august_202608</td><td>8 月新人注册自动发券</td><td>CB20260725001</td><td><span class="tag green">启用</span></td><td><span class="tag amber">未生效</span></td><td>2026-08-01 至 2026-08-31</td><td>-</td><td><a class="link" href="../../pages/backend/external-scene-detail-august.html?return=external-scenes">详情</a><a class="link" href="../../pages/backend/external-scene-edit-august.html?return=external-scenes">编辑</a><span class="link" data-open-modal="#disableScene">停用</span></td></tr><tr><td>增长系统<br><span class="hint">growth_system</span></td><td>june_user_register_202606</td><td>6 月新人注册自动发券</td><td>CB20260612018</td><td><span class="tag green">启用</span></td><td><span class="tag gray">已结束</span></td><td>2026-06-01 至 2026-06-30</td><td><span class="tag green">成功</span></td><td><a class="link" href="../../pages/backend/external-scene-detail-ended.html?return=external-scenes">详情</a></td></tr><tr><td>增长系统<br><span class="hint">growth_system</span></td><td>profile_completed_202607</td><td>7 月完善资料自动发券</td><td>CB20260707011</td><td><span class="tag red">停用</span></td><td><span class="tag amber">未生效</span></td><td>2026-07-10 至 2026-08-31</td><td>-</td><td><a class="link" href="../../pages/backend/external-scene-detail-disabled.html?return=external-scenes">详情</a><a class="link" href="../../pages/backend/external-scene-edit-disabled.html?return=external-scenes">编辑</a><span class="link" data-open-modal="#enableScene">启用</span></td></tr></table></div></section>
+<div class="modal-mask" id="disableScene">
+    <section class="modal">
+      <div class="panel-head"><span>停用场景确认</span><button class="btn" data-close-modal>关闭</button></div>
+      <div class="panel-body stack"><div class="alert">停用后，外部系统使用该 source_system + issue_scene_code 调用自动发券接口将失败并记录原因；历史调用记录保留。</div><textarea placeholder="请输入停用原因，必填"></textarea><div class="btn-row"><button class="btn" data-close-modal>取消</button><button class="btn primary" data-toast="外部发券场景已停用并记录审计">确认停用</button></div></div>
+    </section>
+  </div>
+<div class="modal-mask" id="enableScene">
+    <section class="modal">
+      <div class="panel-head"><span>启用场景确认</span><button class="btn" data-close-modal>关闭</button></div>
+      <div class="panel-body stack"><div class="alert">启用前系统需校验接入系统可用、绑定券批次为外部自动发券且状态为待开始或进行中、生效时间在券批次活动时间和预算池预算周期内，且同组合不存在时间重叠的启用场景。</div><div class="btn-row"><button class="btn" data-close-modal>取消</button><button class="btn primary" data-toast="外部发券场景已启用并记录审计">确认启用</button></div></div>
+    </section>
+  </div>
+</main>
+      </section>
+    </div>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
