@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>新建券批次 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="backend-surface">
+
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../../index.html"><span class="brand-mark">券</span><span>优惠券中台</span></a>
+        <a class="nav-item" href="../../pages/backend/budget-pools.html"><span>预算池管理</span></a>
+<a class="nav-item active" href="../../pages/backend/coupon-batches.html"><span>券批次管理</span></a>
+<a class="nav-item" href="../../pages/backend/approvals.html"><span>审批管理</span></a>
+<a class="nav-item" href="../../pages/backend/external-scenes.html"><span>外部发券场景</span></a>
+        <div class="nav-group-title">发放与查询</div>
+        <a class="nav-item" href="../../pages/backend/issue-tasks.html"><span>发放任务</span></a>
+<a class="nav-item" href="../../pages/backend/user-records.html"><span>用户券记录</span></a>
+<a class="nav-item" href="../../pages/backend/redeem-records.html"><span>核销记录</span></a>
+<a class="nav-item" href="../../pages/backend/config.html"><span>基础规则配置</span></a>
+        
+      </aside>
+      <section class="workspace">
+        <header class="topbar">
+          <div class="topbar-links"><a href="../../index.html">原型首页</a><a href="../../pages/app/coupon-center.html">App 侧原型</a></div>
+          <div class="operator"><span>原型预览</span><span class="avatar">券</span></div>
+        </header>
+        <main class="content">
+<div class="page-head">
+    <div><h1>新建券批次</h1><div class="sub">配置券规则、发放方式、预算库存和审批凭证；系统在本页完成校验后直接提交审核。</div></div>
+    <div class="btn-row"><a class="btn" href="../../pages/backend/coupon-batches.html" data-return-link>取消</a><button class="btn primary" data-toast="已提交券批次审核" data-return-redirect="../../pages/backend/approvals.html">提交审核</button></div>
+  </div>
+<div class="stack" data-coupon-batch-form>
+  <section class="panel"><div class="panel-head">基础信息</div><div class="panel-body form-grid">
+    <div class="field"><label class="required">券名称</label><input value="现金全平台通用券"></div>
+    <div class="field"><label class="required">权益类型</label><select data-benefit-type><option>现金优惠券</option><option>通钻抵扣券</option></select></div>
+    <div class="field"><label class="required">券类型</label><select data-coupon-type><option>固定抵扣券</option><option>折扣券</option></select></div>
+    <div class="field"><label class="required">关联预算池</label><select><option>平台通用营销预算池（启用）</option><option>8 月新人预算池（待开始）</option></select><div class="hint">仅可选择待开始或启用中的预算池；券批次活动时间需在预算周期内。</div></div>
+    <div class="field"><label>成本归属</label><input value="平台营销预算（继承预算池）" readonly></div>
+    <div class="field"><label class="required">券批次活动时间</label><input value="2026-07-10 至 2026-08-31"></div>
+  </div></section>
+  <section class="panel"><div class="panel-head">适用范围</div><div class="panel-body form-grid">
+    <div class="field" data-benefit-field="现金优惠券"><label class="required">适用模式</label><select data-cash-scope-mode><option>全平台通用</option><option>指定业务线</option></select></div>
+    <div class="field" data-benefit-field="现金优惠券"><label class="required">业务场景</label><div class="choice-grid" data-cash-scene-mode="全平台通用"><label class="choice-option is-locked"><input type="checkbox" checked disabled>通钻购买</label><label class="choice-option is-locked"><input type="checkbox" checked disabled>算力购买</label><label class="choice-option is-locked"><input type="checkbox" checked disabled>电影票购买</label></div><div class="choice-grid" data-cash-scene-mode="指定业务线" hidden><label class="choice-option"><input type="radio" name="cash-business-scene" data-cash-business-scene>通钻购买</label><label class="choice-option"><input type="radio" name="cash-business-scene" data-cash-business-scene>算力购买</label><label class="choice-option"><input type="radio" name="cash-business-scene" data-cash-business-scene>电影票购买</label></div></div>
+    <div class="field" data-benefit-field="通钻抵扣券" hidden><label>适用模式</label><input value="指定业务线" readonly></div>
+    <div class="field" data-benefit-field="通钻抵扣券" hidden><label class="required">业务场景</label><div class="choice-grid"><label class="choice-option is-locked"><input type="checkbox" checked disabled>短剧</label></div></div>
+    <div class="field full" data-benefit-field="通钻抵扣券" hidden><label class="required">优惠券可用目标</label><select data-diamond-target><option>全平台短剧</option><option>全平台单集</option><option>指定短剧</option><option>指定单集</option></select></div>
+    <div class="field full" data-benefit-field="通钻抵扣券" data-diamond-target-field="指定短剧" hidden><label class="required">短剧 ID</label><input placeholder="多个短剧 ID 使用英文分号分隔，例如 drama_1001;drama_1002"></div>
+    <div class="field full" data-benefit-field="通钻抵扣券" data-diamond-target-field="指定单集" hidden><label class="required">剧集 ID</label><input placeholder="多个剧集 ID 使用英文分号分隔，例如 episode_1001;episode_1002"></div>
+    <div class="field full" data-jump-link hidden><label>单业务线跳转链接</label><input placeholder="适用模式为指定业务线时配置"></div>
+  </div></section>
+  <section class="panel"><div class="panel-head">券规则与有效期</div><div class="panel-body form-grid">
+    <div class="field" data-coupon-rule="固定抵扣券" data-benefit-field="现金优惠券"><label class="required">抵扣金额</label><input value="20.00 元"></div>
+    <div class="field" data-coupon-rule="固定抵扣券" data-benefit-field="通钻抵扣券" hidden><label class="required">抵扣通钻数</label><input value="30 通钻"></div>
+    <div class="field" data-coupon-rule="折扣券" data-benefit-field="现金优惠券" hidden><label class="required">折扣比例</label><div class="input-unit"><input value="8.5" inputmode="decimal"><span>折</span></div></div>
+    <div class="field" data-coupon-rule="折扣券" data-benefit-field="通钻抵扣券" hidden><label class="required">折扣比例</label><div class="input-unit"><input value="8.0" inputmode="decimal"><span>折</span></div></div>
+    <div class="field" data-coupon-rule="折扣券" data-benefit-field="现金优惠券" hidden><label class="required">最高抵扣金额</label><input value="30.00 元"></div>
+    <div class="field" data-coupon-rule="折扣券" data-benefit-field="通钻抵扣券" hidden><label class="required">最高抵扣通钻数</label><input value="30 通钻"></div>
+    <div class="field" data-benefit-field="现金优惠券"><label class="required">使用门槛</label><input value="满 99.00 元可用"></div>
+    <div class="field" data-benefit-field="通钻抵扣券" hidden><label class="required">使用门槛</label><input value="满 100 通钻可用"></div>
+    <div class="field"><label class="required">有效期类型</label><select data-validity-type><option value="relative">领取后 N 天</option><option value="fixed">时间区间</option></select></div>
+    <div class="field" data-validity-field="relative"><label class="required">领取后有效天数</label><input value="7 天"></div>
+    <div class="field" data-validity-field="fixed" hidden><label class="required">有效期时间区间</label><input value="2026-07-10 至 2026-08-31"></div>
+    <div class="field full"><label>使用说明</label><textarea>一期平台券单个订单仅可使用一张，且不可与业务线其他活动叠加；展示和选择由业务线交易页负责。</textarea></div>
+  </div></section>
+  <section class="panel"><div class="panel-head">预算与库存</div><div class="panel-body form-grid">
+    <div class="field"><label class="required">总库存</label><input value="6,000"></div>
+    <div class="field"><label>批次预算上限</label><input value="120,000.00 元（自动计算）" readonly data-batch-budget-cap><div class="hint">按券规则、权益类型和总库存自动计算，不可修改。</div></div>
+  </div></section>
+  <section class="panel"><div class="panel-head">发放配置</div><div class="panel-body form-grid">
+    <div class="field"><label class="required">发放方式</label><select data-issue-method><option>外部系统自动发券</option><option>用户主动领取</option><option>运营定向发券</option></select></div>
+    <div class="field" data-claim-target hidden><label class="required">投放对象类型</label><select data-claim-target-type><option>按用户分群</option><option>按用户 ID</option></select></div>
+    <div class="field full" data-claim-target data-claim-target-panel="按用户分群" hidden><label class="required">用户分群</label><input value="所有" readonly><div class="hint">本期仅支持“所有”分群；后续接入用户系统分群能力后扩展。</div></div>
+    <div class="field" data-claim-target data-claim-target-panel="按用户 ID" hidden><label class="required">录入方式</label><select data-claim-id-mode><option value="upload">上传用户 ID 清单</option><option value="manual">手动录入用户 ID</option></select></div>
+    <div class="field full" data-claim-target data-claim-target-panel="按用户 ID" data-claim-id-panel="upload" hidden><label class="required">上传用户 ID 清单</label><div class="btn-row" style="margin-bottom:8px;"><button class="btn" type="button" data-toast="Excel 模板已开始下载">下载 Excel 模板</button></div><div class="upload"><b>target-users.xlsx</b><div class="hint">上传 Excel 文件，首列为 user_id。</div></div></div>
+    <div class="field full" data-claim-target data-claim-target-panel="按用户 ID" data-claim-id-panel="manual" hidden><label class="required">手动录入用户 ID</label><textarea placeholder="u_10001,u_10002,u_10003"></textarea><div class="hint">多个用户 ID 使用英文逗号分隔。</div></div>
+    <div class="field full" data-issue-target="direct" hidden><label>运营定向发券</label><div class="hint">指定用户由“新增发放任务”录入并直接发放至用户券账户。</div></div>
+  </div></section>
+  <section class="panel"><div class="panel-head">领取限制</div><div class="panel-body form-grid">
+    <div class="field"><label class="required">每人限领</label><input type="number" min="1" step="1" inputmode="numeric" pattern="[1-9][0-9]*" value="1"><div class="hint">默认 1，支持修改；仅允许输入大于 0 的正整数。</div></div>
+    <div class="field"><label class="required">设备限领</label><input type="number" min="1" step="1" inputmode="numeric" pattern="[1-9][0-9]*" value="1"><div class="hint">同设备同批次最多领取张数，默认 1；仅允许输入大于 0 的正整数。</div></div>
+  </div></section>
+  <section class="panel"><div class="panel-head">审批信息</div><div class="panel-body form-grid">
+    <div class="field"><label class="required">审批单号</label><input value="APR-20260707-1842"></div>
+    <div class="field"><label class="required">审批图片</label><div class="upload"><b>approval-proof.png</b><div class="hint">已上传，支持预览</div></div></div>
+    <div class="field full"><label>备注</label><textarea>用于平台通用领券中心活动。</textarea></div>
+  </div></section>
+</div>
+</main>
+      </section>
+    </div>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
