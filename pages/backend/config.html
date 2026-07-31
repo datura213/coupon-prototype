@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>基础规则配置 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="backend-surface">
+
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../../index.html"><span class="brand-mark">券</span><span>优惠券中台</span></a>
+        <a class="nav-item" href="../../pages/backend/budget-pools.html"><span>预算池管理</span></a>
+<a class="nav-item" href="../../pages/backend/coupon-batches.html"><span>券批次管理</span></a>
+<a class="nav-item" href="../../pages/backend/approvals.html"><span>审批管理</span></a>
+<a class="nav-item" href="../../pages/backend/external-scenes.html"><span>外部发券场景</span></a>
+        <div class="nav-group-title">发放与查询</div>
+        <a class="nav-item" href="../../pages/backend/issue-tasks.html"><span>发放任务</span></a>
+<a class="nav-item" href="../../pages/backend/user-records.html"><span>用户券记录</span></a>
+<a class="nav-item" href="../../pages/backend/redeem-records.html"><span>核销记录</span></a>
+<a class="nav-item active" href="../../pages/backend/config.html"><span>基础规则配置</span></a>
+        
+      </aside>
+      <section class="workspace">
+        <header class="topbar">
+          <div class="topbar-links"><a href="../../index.html">原型首页</a><a href="../../pages/app/coupon-center.html">App 侧原型</a></div>
+          <div class="operator"><span>原型预览</span><span class="avatar">券</span></div>
+        </header>
+        <main class="content">
+<div class="page-head">
+    <div><h1>基础规则配置</h1><div class="sub">运营可配置一期平台基础规则。</div></div>
+    <div class="btn-row"><button class="btn primary" data-toast="配置已保存">保存配置</button></div>
+  </div>
+<section class="panel"><div class="panel-head">开放配置项</div><div class="panel-body form-grid"><div class="field"><label>现金最低实付金额</label><input value="0.01 元"><div class="hint">全平台现金券统一使用，不在券批次单独配置。</div></div><div class="field"><label>通钻最低实付数</label><input value="1 通钻"><div class="hint">全平台通钻抵扣券统一使用，不在券批次单独配置。</div></div><div class="field"><label>通钻预算结算汇率</label><input value="10 通钻 = 1 元"><div class="hint">平台统一规则，券批次仅按该规则自动计算预算上限。</div></div><div class="field locked"><label>锁券超时时间</label><input value="30 分钟" disabled><div class="hint">一期固定规则，不支持运营后台修改；锁券成功后以该时长生成交易保护截止时间。</div></div><div class="field"><label>即将过期提醒提前时间</label><input value="1 天"></div><div class="field"><label>单批次库存预警阈值</label><input value="10%"></div></div></section>
+</main>
+      </section>
+    </div>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
