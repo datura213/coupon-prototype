@@ -1,0 +1,33 @@
+flowchart TD
+  BudgetList --> BudgetForm[新建预算池]
+  BudgetForm -- 取消/提交审核 --> BudgetList
+  BudgetList --> BudgetDetail[预算池详情]
+  BudgetList --> BudgetIncrease[增加预算]
+  BudgetDetail --> BudgetIncrease
+  BudgetIncrease -- 取消 --> BudgetList
+  BudgetIncrease -- 提交审核 --> ApprovalList
+  BudgetDetail -- 返回/操作完成 --> BudgetList
+
+  BatchList --> BatchForm[新建/编辑券批次]
+  BatchForm -- 取消 --> BatchList
+  BatchForm -- 提交审核 --> ApprovalList
+  BatchList --> BatchDetail[券批次详情]
+  BatchDetail -- 返回/确认作废 --> BatchList
+  BatchDetail --> TaskForm[新增发放任务]
+
+  ApprovalList --> BudgetApproval[预算池审核详情]
+  ApprovalList --> BudgetIncreaseApproval[增加预算审核详情]
+  ApprovalList --> BatchApproval[券批次审核详情]
+  BudgetApproval -- 返回/审核通过/确认驳回 --> ApprovalList
+  BudgetIncreaseApproval -- 返回/审核通过/确认驳回 --> ApprovalList
+  BatchApproval -- 返回/审核通过/确认驳回 --> ApprovalList
+
+  SceneList --> SceneForm[新建/编辑外部发券场景]
+  SceneForm -- 取消/保存场景 --> SceneList
+  SceneList --> SceneDetail[外部发券场景详情]
+  SceneDetail -- 返回/停用场景 --> SceneList
+
+  TaskList --> TaskForm
+  TaskForm -- 取消/提交发放任务 --> TaskList
+  TaskForm -- 取消/提交发放任务 --> BatchDetail
+
