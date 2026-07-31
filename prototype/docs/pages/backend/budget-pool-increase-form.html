@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>增加预算 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="backend-surface">
+
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../../index.html"><span class="brand-mark">券</span><span>优惠券中台</span></a>
+        <a class="nav-item active" href="../../pages/backend/budget-pools.html"><span>预算池管理</span></a>
+<a class="nav-item" href="../../pages/backend/coupon-batches.html"><span>券批次管理</span></a>
+<a class="nav-item" href="../../pages/backend/approvals.html"><span>审批管理</span></a>
+<a class="nav-item" href="../../pages/backend/external-scenes.html"><span>外部发券场景</span></a>
+        <div class="nav-group-title">发放与查询</div>
+        <a class="nav-item" href="../../pages/backend/issue-tasks.html"><span>发放任务</span></a>
+<a class="nav-item" href="../../pages/backend/user-records.html"><span>用户券记录</span></a>
+<a class="nav-item" href="../../pages/backend/redeem-records.html"><span>核销记录</span></a>
+<a class="nav-item" href="../../pages/backend/config.html"><span>基础规则配置</span></a>
+        
+      </aside>
+      <section class="workspace">
+        <header class="topbar">
+          <div class="topbar-links"><a href="../../index.html">原型首页</a><a href="../../pages/app/coupon-center.html">App 侧原型</a></div>
+          <div class="operator"><span>原型预览</span><span class="avatar">券</span></div>
+        </header>
+        <main class="content">
+<div class="page-head">
+    <div><h1>增加预算</h1><div class="sub">从指定预算池进入，申请额度审批通过后才更新该预算池总额。</div></div>
+    <div class="btn-row"><a class="btn" href="../../pages/backend/budget-pools.html" data-return-link>取消</a><button class="btn primary" data-toast="已提交增加预算审批" data-return-redirect="../../pages/backend/approvals.html">提交审核</button></div>
+  </div>
+<div class="grid-2" data-budget-increase-form>
+  <section class="panel"><div class="panel-head">增加预算申请</div><div class="panel-body form-grid">
+    <div class="field"><label>预算池 ID</label><input value="BP20260701009" readonly data-budget-pool-id></div>
+    <div class="field"><label>目标预算池</label><input value="平台通用预算池" readonly data-budget-pool-name></div>
+    <div class="field"><label>成本归属</label><input value="平台" readonly data-budget-cost-owner></div>
+    <div class="field"><label>负责人</label><input value="陈运营" readonly data-budget-owner></div>
+    <div class="field"><label>预算周期</label><input value="2026-07-10 至 2026-08-31" readonly data-budget-period></div>
+    <div class="field"><label>当前预算池总额</label><input value="800,000.00 元" readonly data-budget-total></div>
+    <div class="field"><label class="required">增加额度</label><input value="200,000.00 元"></div>
+    <div class="field"><label>审批通过后预算池总额</label><input value="1,000,000.00 元" readonly data-budget-after-total></div>
+    <div class="field"><label class="required">审批单号</label><input value="APR-20260708-1024"></div>
+    <div class="field"><label class="required">审批图片</label><div class="upload"><b>increase-proof.png</b><div class="hint">已上传，支持点击预览</div></div></div>
+    <div class="field full"><label>备注</label><textarea>用于补充 7 月平台通用券活动额度。</textarea></div>
+  </div></section>
+  <div class="stack">
+    <section class="panel"><div class="panel-head">预算快照</div><div class="panel-body desc-list">
+      <div class="desc-row"><span>已分配计划额度</span><b data-budget-allocated>720,000.00 元</b></div>
+      <div class="desc-row"><span>可分配计划额度</span><b data-budget-available>80,000.00 元</b></div>
+      <div class="desc-row"><span>预算已核销成本</span><b data-budget-redeemed>256,500.00 元</b></div>
+      <div class="desc-row"><span>未结清预算占用</span><b data-budget-unsettled>48,000.00 元</b></div>
+      <div class="desc-row"><span>预算已承诺总额</span><b data-budget-committed>304,500.00 元</b></div>
+      <div class="desc-row"><span>实际剩余可用预算</span><b data-budget-remaining>495,500.00 元</b></div>
+    </div></section>
+  </div>
+</div>
+</main>
+      </section>
+    </div>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
