@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>外部发券场景详情 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="backend-surface">
+
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../../index.html"><span class="brand-mark">券</span><span>优惠券中台</span></a>
+        <a class="nav-item" href="../../pages/backend/budget-pools.html"><span>预算池管理</span></a>
+<a class="nav-item" href="../../pages/backend/coupon-batches.html"><span>券批次管理</span></a>
+<a class="nav-item" href="../../pages/backend/approvals.html"><span>审批管理</span></a>
+<a class="nav-item active" href="../../pages/backend/external-scenes.html"><span>外部发券场景</span></a>
+        <div class="nav-group-title">发放与查询</div>
+        <a class="nav-item" href="../../pages/backend/issue-tasks.html"><span>发放任务</span></a>
+<a class="nav-item" href="../../pages/backend/user-records.html"><span>用户券记录</span></a>
+<a class="nav-item" href="../../pages/backend/redeem-records.html"><span>核销记录</span></a>
+<a class="nav-item" href="../../pages/backend/config.html"><span>基础规则配置</span></a>
+        
+      </aside>
+      <section class="workspace">
+        <header class="topbar">
+          <div class="topbar-links"><a href="../../index.html">原型首页</a><a href="../../pages/app/coupon-center.html">App 侧原型</a></div>
+          <div class="operator"><span>原型预览</span><span class="avatar">券</span></div>
+        </header>
+        <main class="content">
+<div class="page-head">
+    <div><h1>外部发券场景详情</h1><div class="sub">展示基础信息、当前绑定券批次、接口调用说明和调用记录。</div></div>
+    <div class="btn-row"><a class="btn" href="../../pages/backend/external-scene-edit-new-user-register.html?return=external-scenes">编辑</a><button class="btn soft-red" data-open-modal="#disableNewUserScene">停用场景</button><a class="btn" href="../../pages/backend/external-scenes.html" data-return-link>返回</a></div>
+  </div>
+<div class="grid-2"><section class="panel"><div class="panel-head"><span>基础信息</span><span class="tag green">启用</span></div><div class="panel-body desc-list"><div class="desc-row"><span>接入系统</span><b>增长系统（growth_system）</b></div><div class="desc-row"><span>issue_scene_code</span><b>new_user_register_202607</b></div><div class="desc-row"><span>场景名称</span><b>7 月新人注册自动发券</b></div><div class="desc-row"><span>触发事件说明</span><b>增长系统在新人注册成功后调用自动发券接口</b></div><div class="desc-row"><span>绑定券批次</span><b>CB20260708021 平台通用自动发券</b></div><div class="desc-row"><span>启停状态</span><b>启用</b></div><div class="desc-row"><span>时间态</span><b>未生效</b></div><div class="desc-row"><span>生效时间</span><b>2026-07-10 至 2026-08-31</b></div><div class="desc-row"><span>最近调用结果</span><b>-</b></div></div></section><section class="panel"><div class="panel-head">接口调用说明</div><div class="panel-body desc-list"><div class="desc-row"><span>必传参数</span><b>source_system / issue_scene_code / external_event_id / user_id</b></div><div class="desc-row"><span>幂等键</span><b>source_system + issue_scene_code + external_event_id + user_id</b></div><div class="desc-row"><span>路由方式</span><b>系统按接入系统、场景编码和生效时间匹配当前绑定券批次</b></div><div class="desc-row"><span>未生效调用</span><b>失败并记录“外部发券场景未生效”</b></div></div></section></div>
+<section class="panel" style="margin-top:14px;"><div class="panel-head">调用记录</div><div class="panel-body"><div class="empty">当前场景未生效，暂无有效调用记录。</div></div></section>
+<div class="modal-mask" id="disableNewUserScene">
+    <section class="modal">
+      <div class="panel-head"><span>停用场景确认</span><button class="btn" data-close-modal>关闭</button></div>
+      <div class="panel-body stack"><div class="alert">停用后，外部系统使用该 source_system + issue_scene_code 调用自动发券接口将失败并记录原因；历史调用记录保留。</div><textarea placeholder="请输入停用原因，必填"></textarea><div class="btn-row"><button class="btn" data-close-modal>取消</button><button class="btn primary" data-toast="外部发券场景已停用并记录审计" data-return-redirect="../../pages/backend/external-scenes.html">确认停用</button></div></div>
+    </section>
+  </div>
+</main>
+      </section>
+    </div>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
