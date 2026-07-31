@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>券批次详情 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="backend-surface">
+
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../../index.html"><span class="brand-mark">券</span><span>优惠券中台</span></a>
+        <a class="nav-item" href="../../pages/backend/budget-pools.html"><span>预算池管理</span></a>
+<a class="nav-item active" href="../../pages/backend/coupon-batches.html"><span>券批次管理</span></a>
+<a class="nav-item" href="../../pages/backend/approvals.html"><span>审批管理</span></a>
+<a class="nav-item" href="../../pages/backend/external-scenes.html"><span>外部发券场景</span></a>
+        <div class="nav-group-title">发放与查询</div>
+        <a class="nav-item" href="../../pages/backend/issue-tasks.html"><span>发放任务</span></a>
+<a class="nav-item" href="../../pages/backend/user-records.html"><span>用户券记录</span></a>
+<a class="nav-item" href="../../pages/backend/redeem-records.html"><span>核销记录</span></a>
+<a class="nav-item" href="../../pages/backend/config.html"><span>基础规则配置</span></a>
+        
+      </aside>
+      <section class="workspace">
+        <header class="topbar">
+          <div class="topbar-links"><a href="../../index.html">原型首页</a><a href="../../pages/app/coupon-center.html">App 侧原型</a></div>
+          <div class="operator"><span>原型预览</span><span class="avatar">券</span></div>
+        </header>
+        <main class="content">
+<div class="page-head">
+    <div><h1>券批次详情</h1><div class="sub">当前券批次已审核通过但活动未开始，可提前绑定外部发券场景，活动开始后才允许实际发券。</div></div>
+    <div class="btn-row"><button class="btn" data-open-modal="#disableUpcomingBatch">停用批次</button><button class="btn soft-red" data-open-modal="#voidUpcomingBatch">作废批次</button><a class="btn" href="../../pages/backend/coupon-batches.html" data-return-link>返回</a></div>
+  </div>
+<div class="grid-2 detail-single">
+  <section class="panel"><div class="panel-head"><span>基础信息</span><span class="tag amber">待开始</span></div><div class="panel-body detail-meta-grid"><div class="detail-meta-item"><span>券批次 ID</span><b>CB20260725001</b></div><div class="detail-meta-item"><span>券名称</span><b>8 月新人自动发券</b></div><div class="detail-meta-item"><span>权益类型</span><b>现金优惠券</b></div><div class="detail-meta-item"><span>券类型</span><b>固定抵扣券</b></div><div class="detail-meta-item"><span>关联预算池</span><b>8 月新人预算池（待开始）</b></div><div class="detail-meta-item"><span>成本归属</span><b>业务线：通钻购买（继承预算池）</b></div><div class="detail-meta-item"><span>券批次活动时间</span><b>2026-08-01 至 2026-08-31</b></div><div class="detail-meta-item"><span>发放方式</span><b>外部自动发券</b></div><div class="detail-meta-item"><span>适用模式</span><b>全平台通用</b></div><div class="detail-meta-item"><span>业务场景</span><b>通钻购买、算力购买、电影票购买</b></div><div class="detail-meta-item"><span>抵扣金额</span><b>20.00 元</b></div><div class="detail-meta-item"><span>使用门槛</span><b>满 99.00 元可用</b></div><div class="detail-meta-item"><span>有效期类型</span><b>领取后 N 天</b></div><div class="detail-meta-item"><span>券有效期</span><b>领取后 7 天有效</b></div><div class="detail-meta-item"><span>批次预算上限</span><b>120,000.00 元</b></div><div class="detail-meta-item"><span>当前实际占用</span><b>0.00 元</b></div><div class="detail-meta-item"><span>批次剩余预算</span><b>120,000.00 元</b></div><div class="detail-meta-item"><span>每人限领</span><b>1 张</b></div><div class="detail-meta-item"><span>设备限领</span><b>1 张</b></div><div class="detail-meta-item full"><span>使用说明</span><b>一期平台券单个订单仅可使用一张，且不可与业务线其他活动叠加。</b></div><div class="detail-meta-item"><span>审批单号</span><b>APR-20260725-1008</b></div><div class="detail-meta-item"><span>审批状态</span><b>审核通过</b></div><div class="detail-meta-item"><span>审核人</span><b>陈审核</b></div><div class="detail-meta-item"><span>审核时间</span><b>2026-07-10 10:30</b></div><div class="detail-meta-item full"><span>审批图片</span><b>approval-proof.png</b></div><div class="detail-meta-item"><span>预算周期</span><b>2026-08-01 至 2026-08-31</b></div></div></section>
+</div>
+
+<section class="panel" style="margin-top:14px;"><div class="panel-head">库存信息</div><div class="panel-body desc-list"><div class="desc-row"><span>总库存</span><b>6,000 张</b></div><div class="desc-row"><span>已发放数量</span><b>0 张</b></div><div class="desc-row"><span>剩余库存</span><b>6,000 张</b></div></div></section>
+<section class="panel" style="margin-top:14px;"><div class="panel-head">已绑定外部发券场景</div><div class="table-scroll" data-scroll-hint="左右滑动查看更多字段"><table class="data-table" style="--table-min-width:792px"><tr><th>接入系统</th><th>发券场景编码</th><th>场景名称</th><th>启停状态</th><th>生效时间</th><th>最近调用结果</th></tr><tr><td>增长系统<br><span class="hint">growth_system</span></td><td>new_user_august_202608</td><td>8 月新人注册自动发券</td><td><span class="tag green">启用</span></td><td>2026-08-01 至 2026-08-31</td><td>-</td></tr></table></div></section>
+<section class="panel" style="margin-top:14px;"><div class="panel-head">发放任务</div><div class="panel-body"><div class="empty">活动未开始，暂无发放任务。</div></div></section>
+<section class="panel" style="margin-top:14px;"><div class="panel-head">数据统计</div><div class="panel-body"><div class="grid-4"><div class="stat-card"><span>发券数</span><strong>0</strong></div><div class="stat-card"><span>剩余库存</span><strong>6,000</strong></div><div class="stat-card"><span>当前实际占用</span><strong>0.00</strong></div><div class="stat-card"><span>批次剩余预算</span><strong>120,000</strong></div></div></div></section>
+<div class="modal-mask" id="disableUpcomingBatch">
+    <section class="modal">
+      <div class="panel-head"><span>停用批次确认</span><button class="btn" data-close-modal>关闭</button></div>
+      <div class="panel-body stack"><div class="alert">停用后，该批次不可继续被外部场景实际发券；已绑定场景保留但调用会失败并记录原因。</div><textarea placeholder="请输入停用原因，必填"></textarea><div class="btn-row"><button class="btn" data-close-modal>取消</button><button class="btn primary" data-toast="券批次已停用并记录审计" data-return-redirect="../../pages/backend/coupon-batches.html">确认停用</button></div></div>
+    </section>
+  </div>
+<div class="modal-mask" id="voidUpcomingBatch">
+    <section class="modal">
+      <div class="panel-head"><span>作废批次确认</span><button class="btn" data-close-modal>关闭</button></div>
+      <div class="panel-body stack"><div class="alert">批次作废后不可恢复，已绑定外部场景后续调用会失败并记录原因。</div><textarea placeholder="请输入作废原因"></textarea><div class="btn-row"><button class="btn" data-close-modal>取消</button><button class="btn primary" data-toast="已提交作废操作" data-return-redirect="../../pages/backend/coupon-batches.html">确认作废</button></div></div>
+    </section>
+  </div>
+</main>
+      </section>
+    </div>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
