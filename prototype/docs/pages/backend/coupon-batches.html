@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>券批次管理 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="backend-surface">
+
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../../index.html"><span class="brand-mark">券</span><span>优惠券中台</span></a>
+        <a class="nav-item" href="../../pages/backend/budget-pools.html"><span>预算池管理</span></a>
+<a class="nav-item active" href="../../pages/backend/coupon-batches.html"><span>券批次管理</span></a>
+<a class="nav-item" href="../../pages/backend/approvals.html"><span>审批管理</span></a>
+<a class="nav-item" href="../../pages/backend/external-scenes.html"><span>外部发券场景</span></a>
+        <div class="nav-group-title">发放与查询</div>
+        <a class="nav-item" href="../../pages/backend/issue-tasks.html"><span>发放任务</span></a>
+<a class="nav-item" href="../../pages/backend/user-records.html"><span>用户券记录</span></a>
+<a class="nav-item" href="../../pages/backend/redeem-records.html"><span>核销记录</span></a>
+<a class="nav-item" href="../../pages/backend/config.html"><span>基础规则配置</span></a>
+        
+      </aside>
+      <section class="workspace">
+        <header class="topbar">
+          <div class="topbar-links"><a href="../../index.html">原型首页</a><a href="../../pages/app/coupon-center.html">App 侧原型</a></div>
+          <div class="operator"><span>原型预览</span><span class="avatar">券</span></div>
+        </header>
+        <main class="content">
+<div class="page-head">
+    <div><h1>券批次管理</h1><div class="sub">创建现金优惠券或通钻抵扣券批次，提交审核通过后才可发布、领取或发放。</div></div>
+    <div class="btn-row"><a class="btn primary" href="../../pages/backend/coupon-batch-form.html?return=coupon-batches">新建券批次</a></div>
+  </div>
+<div class="filter-bar" style="margin-top:14px; grid-template-columns: 1.12fr .95fr .95fr .9fr .95fr auto;"><input value="券名称 / 券批次 ID"><select><option>全部预算池</option><option>平台通用预算池</option><option>平台通用营销预算池</option></select><select><option>全部发放方式</option><option>用户主动领取</option><option>运营定向发券</option><option>外部系统自动发券</option></select><select><option>全部状态</option><option>待审核</option><option>审核驳回</option><option>待开始</option><option>进行中</option><option>停用</option><option>已过期</option><option>已作废</option></select><input value="审批单号"><button class="btn primary btn-query" type="button" data-list-filter-action>查询</button></div>
+<section class="panel"><div class="panel-head">券批次列表</div><div class="table-scroll" data-scroll-hint="左右滑动查看更多字段"><table class="data-table action-table" style="--table-min-width:1452px">
+  <tr><th>券批次 ID</th><th>券名称</th><th>权益 / 券类型</th><th>预算池</th><th>批次预算上限</th><th>发放方式</th><th>活动时间</th><th>有效期</th><th>审批单号</th><th>状态</th><th>操作</th></tr>
+  <tr><td>CB20260713001</td><td>短剧 8 折通钻券</td><td>通钻抵扣券 / 折扣券</td><td>平台通用预算池</td><td>30,000.00</td><td>用户主动领取</td><td>2026-07-13 至 2026-08-31</td><td>领取后 7 天</td><td>APR-20260713-1018</td><td><span class="tag green">进行中</span></td><td><a class="link" href="../../pages/backend/coupon-batch-detail-diamond.html?return=coupon-batches">详情</a></td></tr>
+  <tr><td>CB20260714002</td><td>指定短剧 8 折通钻券</td><td>通钻抵扣券 / 折扣券</td><td>平台通用预算池</td><td>12,000.00</td><td>用户主动领取</td><td>2026-07-14 至 2026-08-31</td><td>领取后 7 天</td><td>APR-20260714-1022</td><td><span class="tag green">进行中</span></td><td><a class="link" href="../../pages/backend/coupon-batch-detail-diamond-drama.html?return=coupon-batches">详情</a></td></tr>
+  <tr><td>CB20260714003</td><td>指定单集 8 折通钻券</td><td>通钻抵扣券 / 折扣券</td><td>平台通用预算池</td><td>8,000.00</td><td>用户主动领取</td><td>2026-07-14 至 2026-08-31</td><td>领取后 7 天</td><td>APR-20260714-1023</td><td><span class="tag green">进行中</span></td><td><a class="link" href="../../pages/backend/coupon-batch-detail-diamond-episode.html?return=coupon-batches">详情</a></td></tr>
+  <tr><td>CB20260707001</td><td>平台通用满减券</td><td>现金优惠券 / 固定抵扣券</td><td>平台通用预算池</td><td>120,000.00</td><td>外部自动发券</td><td>2026-07-10 至 2026-08-31</td><td>领取后 7 天</td><td>APR-20260707-1842</td><td><span class="tag amber">待审核</span></td><td><a class="link" href="../../pages/backend/coupon-batch-detail-pending.html?return=coupon-batches">详情</a></td></tr>
+  <tr><td>CB20260725001</td><td>8 月新人自动发券</td><td>现金优惠券 / 固定抵扣券</td><td>8 月新人预算池</td><td>120,000.00</td><td>外部自动发券</td><td>2026-08-01 至 2026-08-31</td><td>领取后 7 天</td><td>APR-20260725-1008</td><td><span class="tag amber">待开始</span></td><td><a class="link" href="../../pages/backend/coupon-batch-detail-upcoming.html?return=coupon-batches">详情</a><span class="link" data-open-modal="#disableBatchFromList">停用</span></td></tr>
+  <tr><td>CB20260701011</td><td>平台通用满减券</td><td>现金优惠券 / 固定抵扣券</td><td>平台通用预算池</td><td>300,000.00</td><td>用户主动领取</td><td>2026-07-10 至 2026-08-31</td><td>领取后 7 天</td><td>APR-20260701-2014</td><td><span class="tag green">进行中</span></td><td><a class="link" href="../../pages/backend/coupon-batch-detail.html?return=coupon-batches">详情</a><span class="link" data-open-modal="#disableBatchFromList">停用</span></td></tr>
+  <tr><td>CB20260708021</td><td>平台通用自动发券</td><td>现金优惠券 / 固定抵扣券</td><td>平台通用营销预算池</td><td>180,000.00</td><td>外部自动发券</td><td>2026-07-08 至 2026-08-31</td><td>领取后 7 天</td><td>APR-20260708-1530</td><td><span class="tag green">进行中</span></td><td><a class="link" href="../../pages/backend/coupon-batch-detail-external.html?return=coupon-batches">详情</a><span class="link" data-open-modal="#disableBatchFromList">停用</span></td></tr>
+  <tr><td>CB20260709015</td><td>平台定向补贴券</td><td>现金优惠券 / 固定抵扣券</td><td>平台通用预算池</td><td>90,000.00</td><td>运营定向发券</td><td>2026-07-09 至 2026-08-31</td><td>领取后 7 天</td><td>APR-20260709-0920</td><td><span class="tag green">进行中</span></td><td><a class="link" href="../../pages/backend/coupon-batch-detail-direct.html?return=coupon-batches">详情</a><span class="link" data-open-modal="#disableBatchFromList">停用</span></td></tr>
+  <tr><td>CB20260629009</td><td>平台通用折扣券</td><td>现金优惠券 / 折扣券</td><td>平台通用预算池</td><td>80,000.00</td><td>运营定向发券</td><td>2026-07-01 至 2026-07-31</td><td>2026-07-01 至 2026-07-31</td><td>APR-20260629-1910</td><td><span class="tag red">审核驳回</span></td><td><a class="link" href="../../pages/backend/coupon-batch-edit-rejected.html?return=coupon-batches">编辑</a></td></tr>
+  <tr><td>CB20260618015</td><td>平台通用满减券</td><td>现金优惠券 / 固定抵扣券</td><td>平台通用预算池</td><td>50,000.00</td><td>用户主动领取</td><td>2026-06-18 至 2026-07-15</td><td>领取后 5 天</td><td>APR-20260618-1510</td><td><span class="tag blue">停用</span></td><td><a class="link" href="../../pages/backend/coupon-batch-detail-disabled.html?return=coupon-batches">详情</a><span class="link" data-open-modal="#enableBatchFromList">启用</span></td></tr>
+  <tr><td>CB20260612018</td><td>平台通用满减券</td><td>现金优惠券 / 固定抵扣券</td><td>平台通用预算池</td><td>40,000.00</td><td>用户主动领取</td><td>2026-06-12 至 2026-06-30</td><td>2026-06-12 至 2026-06-30</td><td>APR-20260612-1030</td><td><span class="tag gray">已过期</span></td><td><a class="link" href="../../pages/backend/coupon-batch-detail-expired.html?return=coupon-batches">详情</a></td></tr>
+  <tr><td>CB20260610007</td><td>平台通用折扣券</td><td>现金优惠券 / 折扣券</td><td>平台通用预算池</td><td>60,000.00</td><td>运营定向发券</td><td>2026-06-10 至 2026-07-20</td><td>领取后 10 天</td><td>APR-20260610-0908</td><td><span class="tag red">已作废</span></td><td><a class="link" href="../../pages/backend/coupon-batch-detail-voided.html?return=coupon-batches">详情</a></td></tr>
+</table></div></section>
+<div class="modal-mask" id="disableBatchFromList">
+    <section class="modal">
+      <div class="panel-head"><span>停用批次确认</span><button class="btn" data-close-modal>关闭</button></div>
+      <div class="panel-body stack"><div class="alert">停用后，该批次不再支持领券、运营定向发券或外部自动发券；已领取券仍按有效期保留。</div><textarea placeholder="请输入停用原因，必填"></textarea><div class="btn-row"><button class="btn" data-close-modal>取消</button><button class="btn primary" data-toast="券批次已停用并记录审计">确认停用</button></div></div>
+    </section>
+  </div>
+<div class="modal-mask" id="enableBatchFromList">
+    <section class="modal">
+      <div class="panel-head"><span>启用批次确认</span><button class="btn" data-close-modal>关闭</button></div>
+      <div class="panel-body stack"><div class="alert">启用前系统需校验预算池为待开始或启用状态、券批次活动未过期、活动时间仍在预算周期内，且库存和预算仍满足发放条件；通过后按券批次活动时间恢复为待开始或进行中。</div><div class="btn-row"><button class="btn" data-close-modal>取消</button><button class="btn primary" data-toast="券批次已启用并记录审计">确认启用</button></div></div>
+    </section>
+  </div>
+</main>
+      </section>
+    </div>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
