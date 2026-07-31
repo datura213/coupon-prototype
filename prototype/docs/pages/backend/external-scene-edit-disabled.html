@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>编辑外部发券场景 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="backend-surface">
+
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../../index.html"><span class="brand-mark">券</span><span>优惠券中台</span></a>
+        <a class="nav-item" href="../../pages/backend/budget-pools.html"><span>预算池管理</span></a>
+<a class="nav-item" href="../../pages/backend/coupon-batches.html"><span>券批次管理</span></a>
+<a class="nav-item" href="../../pages/backend/approvals.html"><span>审批管理</span></a>
+<a class="nav-item active" href="../../pages/backend/external-scenes.html"><span>外部发券场景</span></a>
+        <div class="nav-group-title">发放与查询</div>
+        <a class="nav-item" href="../../pages/backend/issue-tasks.html"><span>发放任务</span></a>
+<a class="nav-item" href="../../pages/backend/user-records.html"><span>用户券记录</span></a>
+<a class="nav-item" href="../../pages/backend/redeem-records.html"><span>核销记录</span></a>
+<a class="nav-item" href="../../pages/backend/config.html"><span>基础规则配置</span></a>
+        
+      </aside>
+      <section class="workspace">
+        <header class="topbar">
+          <div class="topbar-links"><a href="../../index.html">原型首页</a><a href="../../pages/app/coupon-center.html">App 侧原型</a></div>
+          <div class="operator"><span>原型预览</span><span class="avatar">券</span></div>
+        </header>
+        <main class="content">
+<div class="page-head">
+    <div><h1>编辑外部发券场景</h1><div class="sub">当前场景已停用，可编辑场景信息；启用前系统需重新校验绑定券批次、生效时间和时间重叠。</div></div>
+    <div class="btn-row"><a class="btn" href="../../pages/backend/external-scenes.html" data-return-link>取消</a><button class="btn primary" data-toast="外部发券场景已保存" data-return-redirect="../../pages/backend/external-scenes.html">保存</button></div>
+  </div>
+<section class="panel"><div class="panel-head">场景配置</div><div class="panel-body form-grid">
+  <div class="field locked"><label>接入系统名称</label><input value="增长系统（growth_system）" disabled><div class="hint">外部接口路由身份，创建后不可编辑。</div></div>
+  <div class="field locked"><label>发券场景编码 issue_scene_code</label><input value="profile_completed_202607" disabled><div class="hint">运营创建时填写，创建后不可编辑，外部系统按该编码调用。</div></div>
+  <div class="field locked"><label>当前时间态</label><input value="未生效" disabled><div class="hint">当前时间早于生效开始时间，但启停状态为停用，保存启用前需重新校验。</div></div>
+  <div class="field"><label class="required">场景名称</label><input value="7 月完善资料自动发券"></div>
+  <div class="field"><label class="required">绑定券批次</label><select><option selected>CB20260708021 平台通用自动发券（进行中）</option><option>CB20260725001 8 月新人自动发券（待开始）</option></select><div class="hint">更新后仅影响后续调用；保存时重新校验券批次状态、活动时间、预算池周期和同场景编码时间重叠。</div></div>
+  <div class="field full"><label class="required">触发事件说明</label><textarea>增长系统在用户完善资料后，按配置的发券场景编码调用自动发券接口。</textarea></div>
+  <div class="field"><label class="required">生效开始时间</label><input value="2026-07-10 00:00"><div class="hint">未生效场景可编辑；不得早于当前时间、券批次活动开始时间和预算池周期开始时间。</div></div>
+  <div class="field"><label class="required">生效结束时间</label><input value="2026-08-31 23:59"><div class="hint">不得晚于券批次活动结束时间和预算池周期结束时间。</div></div>
+  <div class="field"><label>启停状态</label><select><option>启用</option><option selected>停用</option></select></div>
+</div></section>
+</main>
+      </section>
+    </div>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
