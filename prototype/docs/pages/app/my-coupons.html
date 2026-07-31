@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App 我的优惠券 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="app-surface">
+
+    <main class="app-stage">
+      <div class="prototype-switcher" aria-label="原型导航">
+        <a href="../../index.html">原型首页</a>
+        <a href="../../pages/backend/budget-pools.html">运营后台</a>
+      </div>
+      <section class="phone-frame">
+        <div class="phone-status"><span>09:41</span><span>5G 86%</span></div>
+        
+<div class="app-screen">
+  <div class="app-title"><h1>我的优惠券</h1></div>
+  <div class="app-tabs"><button class="app-tab active" data-app-tab="unused" type="button">待使用</button><button class="app-tab" data-app-tab="used" type="button">已使用</button><button class="app-tab" data-app-tab="invalid" type="button">已失效</button></div>
+  <section class="app-panel active" data-app-panel="unused"><div class="mini-list">
+    <div class="mini-coupon cash-coupon" data-coupon-variant="cash-pending"><div class="mini-value"><strong>¥20</strong><span>满99可用</span></div><div class="mini-copy"><b>平台通用满减券</b><span>有效期至 2026-07-14 23:59</span><span>全平台通用</span><span class="tag green">待使用</span></div></div>
+    <div class="mini-coupon diamond-coupon" data-coupon-variant="diamond-pending"><div class="mini-value"><strong>30</strong><span>通钻最高抵扣</span></div><div class="mini-copy"><b>短剧 8 折通钻券</b><span>满 100 通钻可用</span><span>有效期至 2026-07-20 23:59</span><span>适用范围：短剧全集解锁</span><span class="tag green">待使用</span></div></div>
+    <div class="mini-coupon cash-coupon state-using" data-coupon-variant="cash-using"><div class="mini-value"><strong>¥20</strong><span>满99可用</span></div><div class="mini-copy"><b>平台通用满减券</b><span>有效期至 2026-07-14 23:59</span><span>全平台通用</span><span class="tag amber">使用中</span></div></div>
+    <div class="mini-coupon diamond-coupon state-using" data-coupon-variant="diamond-using"><div class="mini-value"><strong>30</strong><span>通钻最高抵扣</span></div><div class="mini-copy"><b>短剧 8 折通钻券</b><span>满 100 通钻可用</span><span>有效期至 2026-07-20 23:59</span><span>适用范围：短剧全集解锁</span><span class="tag amber">使用中</span></div></div>
+  </div></section>
+  <section class="app-panel" data-app-panel="used"><div class="mini-list">
+    <div class="mini-coupon cash-coupon invalid" data-coupon-variant="cash-used"><div class="mini-value"><strong>¥20</strong><span>满99可用</span></div><div class="mini-copy"><b>平台通用满减券</b><span>有效期至 2026-07-14 23:59</span><span>全平台通用</span><span class="tag gray">已使用</span></div></div>
+    <div class="mini-coupon diamond-coupon invalid" data-coupon-variant="diamond-used"><div class="mini-value"><strong>30</strong><span>通钻最高抵扣</span></div><div class="mini-copy"><b>短剧 8 折通钻券</b><span>满 100 通钻可用</span><span>有效期至 2026-07-20 23:59</span><span>适用范围：短剧全集解锁</span><span class="tag gray">已使用</span></div></div>
+  </div></section>
+  <section class="app-panel" data-app-panel="invalid"><div class="mini-list">
+    <div class="mini-coupon cash-coupon invalid" data-coupon-variant="cash-expired"><div class="mini-value"><strong>¥20</strong><span>满99可用</span></div><div class="mini-copy"><b>平台通用满减券</b><span>有效期至 2026-07-14 23:59</span><span>全平台通用</span><span class="tag gray">已过期</span></div></div>
+    <div class="mini-coupon diamond-coupon invalid" data-coupon-variant="diamond-expired"><div class="mini-value"><strong>30</strong><span>通钻最高抵扣</span></div><div class="mini-copy"><b>短剧 8 折通钻券</b><span>满 100 通钻可用</span><span>有效期至 2026-07-20 23:59</span><span>适用范围：短剧全集解锁</span><span class="tag gray">已过期</span></div></div>
+    <div class="mini-coupon cash-coupon invalid" data-coupon-variant="cash-voided"><div class="mini-value"><strong>¥20</strong><span>满99可用</span></div><div class="mini-copy"><b>平台通用满减券</b><span>有效期至 2026-07-14 23:59</span><span>全平台通用</span><span class="coupon-invalid">作废原因：活动提前结束</span><span class="tag red">已作废</span></div></div>
+    <div class="mini-coupon diamond-coupon invalid" data-coupon-variant="diamond-voided"><div class="mini-value"><strong>30</strong><span>通钻最高抵扣</span></div><div class="mini-copy"><b>短剧 8 折通钻券</b><span>满 100 通钻可用</span><span>有效期至 2026-07-20 23:59</span><span>适用范围：短剧全集解锁</span><span class="coupon-invalid">作废原因：权益配置调整</span><span class="tag red">已作废</span></div></div>
+  </div></section>
+</div>
+
+        <nav class="app-bottom">
+          <a class="" href="../../pages/app/coupon-center.html"><span></span>领券</a>
+          <a class="on" href="../../pages/app/my-coupons.html"><span></span>我的券</a>
+        </nav>
+      </section>
+    </main>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
