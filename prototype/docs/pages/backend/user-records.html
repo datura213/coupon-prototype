@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>用户券记录 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="backend-surface">
+
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../../index.html"><span class="brand-mark">券</span><span>优惠券中台</span></a>
+        <a class="nav-item" href="../../pages/backend/budget-pools.html"><span>预算池管理</span></a>
+<a class="nav-item" href="../../pages/backend/coupon-batches.html"><span>券批次管理</span></a>
+<a class="nav-item" href="../../pages/backend/approvals.html"><span>审批管理</span></a>
+<a class="nav-item" href="../../pages/backend/external-scenes.html"><span>外部发券场景</span></a>
+        <div class="nav-group-title">发放与查询</div>
+        <a class="nav-item" href="../../pages/backend/issue-tasks.html"><span>发放任务</span></a>
+<a class="nav-item active" href="../../pages/backend/user-records.html"><span>用户券记录</span></a>
+<a class="nav-item" href="../../pages/backend/redeem-records.html"><span>核销记录</span></a>
+<a class="nav-item" href="../../pages/backend/config.html"><span>基础规则配置</span></a>
+        
+      </aside>
+      <section class="workspace">
+        <header class="topbar">
+          <div class="topbar-links"><a href="../../index.html">原型首页</a><a href="../../pages/app/coupon-center.html">App 侧原型</a></div>
+          <div class="operator"><span>原型预览</span><span class="avatar">券</span></div>
+        </header>
+        <main class="content">
+<div class="page-head">
+    <div><h1>用户券记录</h1><div class="sub">仅查询已成功生成的用户券及其后续状态；发放失败请在发放任务明细中查看。</div></div>
+    <div class="btn-row"><button class="btn primary">导出记录</button></div>
+  </div>
+<div class="filter-bar" style="grid-template-columns: 1fr 1fr .9fr .9fr auto;"><input value="用户券 ID / 用户 ID / 手机号"><input value="券名称"><select><option>全部用户券状态</option><option>待使用</option><option>锁定中</option><option>已使用</option><option>已过期</option><option>已作废</option></select><select><option>全部时间</option><option>今日到账</option><option>近 7 天到账</option><option>自定义时间</option></select><button class="btn primary btn-query" type="button" data-list-filter-action>查询</button></div>
+<section class="panel"><div class="panel-head">用户券记录列表</div><div class="table-scroll" data-scroll-hint="左右滑动查看更多字段"><table class="data-table action-table" style="--table-min-width:1188px"><tr><th>用户券 ID</th><th>用户 ID</th><th>手机号</th><th>券名称</th><th>用户券状态</th><th>状态原因</th><th>到账时间</th><th>用户券实际有效期</th><th>操作</th></tr><tr data-user-coupon-row><td><a class="link" href="../../pages/backend/user-coupon-detail-available.html?return=user-records">UC20260708001</a></td><td>u_123456</td><td>13800000000</td><td>平台通用自动发券</td><td data-user-coupon-status><span class="tag green">待使用</span></td><td>-</td><td>2026-07-08 15:20</td><td>2026-07-08 15:20 至 2026-07-15 23:59</td><td><a class="link" href="../../pages/backend/user-coupon-detail-available.html?return=user-records">详情</a><span class="link" data-user-coupon-action data-open-modal="#voidUserCoupon">作废</span></td></tr><tr data-user-coupon-row><td><a class="link" href="../../pages/backend/user-coupon-detail-locked.html?return=user-records">UC202607130122</a></td><td>u_660122</td><td>13600000122</td><td>平台通用自动发券</td><td data-user-coupon-status><span class="tag blue">锁定中</span></td><td>-</td><td>2026-07-13 13:30</td><td>2026-07-13 13:30 至 2026-07-13 14:10</td><td><a class="link" href="../../pages/backend/user-coupon-detail-locked.html?return=user-records">详情</a></td></tr><tr data-user-coupon-row><td><a class="link" href="../../pages/backend/user-coupon-detail-used.html?return=user-records">UC202607130091</a></td><td>u_660091</td><td>13600000091</td><td>短剧全集通钻抵扣券</td><td data-user-coupon-status><span class="tag green">已使用</span></td><td>-</td><td>2026-07-09 10:20</td><td>2026-07-09 10:20 至 2026-07-16 23:59</td><td><a class="link" href="../../pages/backend/user-coupon-detail-used.html?return=user-records">详情</a></td></tr><tr data-user-coupon-row><td><a class="link" href="../../pages/backend/user-coupon-detail-used-diamond.html?return=user-records">UC202607130072</a></td><td>u_660072</td><td>13600000072</td><td>通钻购买立减券</td><td data-user-coupon-status><span class="tag green">已使用</span></td><td>-</td><td>2026-07-09 11:05</td><td>2026-07-09 11:05 至 2026-07-16 23:59</td><td><a class="link" href="../../pages/backend/user-coupon-detail-used-diamond.html?return=user-records">详情</a></td></tr><tr data-user-coupon-row><td><a class="link" href="../../pages/backend/user-coupon-detail-used-compute.html?return=user-records">UC202607130066</a></td><td>u_660066</td><td>13600000066</td><td>算力购买立减券</td><td data-user-coupon-status><span class="tag green">已使用</span></td><td>-</td><td>2026-07-09 11:05</td><td>2026-07-09 11:05 至 2026-07-16 23:59</td><td><a class="link" href="../../pages/backend/user-coupon-detail-used-compute.html?return=user-records">详情</a></td></tr><tr data-user-coupon-row><td><a class="link" href="../../pages/backend/user-coupon-detail-used-movie.html?return=user-records">UC202607130062</a></td><td>u_660062</td><td>13600000062</td><td>电影票立减券</td><td data-user-coupon-status><span class="tag green">已使用</span></td><td>-</td><td>2026-07-09 10:20</td><td>2026-07-09 10:20 至 2026-07-16 23:59</td><td><a class="link" href="../../pages/backend/user-coupon-detail-used-movie.html?return=user-records">详情</a></td></tr><tr data-user-coupon-row><td><a class="link" href="../../pages/backend/user-coupon-detail-used-drama-episode.html?return=user-records">UC202607130058</a></td><td>u_660058</td><td>13600000058</td><td>短剧单集通钻抵扣券</td><td data-user-coupon-status><span class="tag green">已使用</span></td><td>-</td><td>2026-07-09 10:20</td><td>2026-07-09 10:20 至 2026-07-16 23:59</td><td><a class="link" href="../../pages/backend/user-coupon-detail-used-drama-episode.html?return=user-records">详情</a></td></tr><tr data-user-coupon-row><td><a class="link" href="../../pages/backend/user-coupon-detail-expired.html?return=user-records">UC20260701001</a></td><td>u_789001</td><td>13900000000</td><td>平台通用满减券</td><td data-user-coupon-status><span class="tag gray">已过期</span></td><td>自然过期</td><td>2026-07-01 10:00</td><td>2026-07-01 10:00 至 2026-07-08 23:59</td><td><a class="link" href="../../pages/backend/user-coupon-detail-expired.html?return=user-records">详情</a></td></tr><tr data-user-coupon-row><td><a class="link" href="../../pages/backend/user-coupon-detail-voided.html?return=user-records">UC20260618015</a></td><td>u_789002</td><td>13900000001</td><td>平台通用满减券</td><td data-user-coupon-status><span class="tag red">已作废</span></td><td>后台作废：活动提前结束</td><td>2026-06-18 10:00</td><td>2026-06-18 10:00 至 2026-07-15 23:59</td><td><a class="link" href="../../pages/backend/user-coupon-detail-voided.html?return=user-records">详情</a></td></tr></table></div></section>
+<div class="modal-mask" id="voidUserCoupon">
+    <section class="modal">
+      <div class="panel-head"><span>用户券作废确认</span><button class="btn" data-close-modal>关闭</button></div>
+      <div class="panel-body stack"><div class="alert">作废后用户券将立即失效，并释放当前实际预算占用 20.00 元。该操作会写入预算流水和审计记录，并发送作废通知。</div><div class="desc-list"><div class="desc-row"><span>用户券</span><b>UC20260708001</b></div><div class="desc-row"><span>券批次</span><b>CB20260708021 平台通用自动发券</b></div><div class="desc-row"><span>当前有效期</span><b>2026-07-08 至 2026-07-15</b></div></div><textarea data-user-coupon-void-reason placeholder="请输入作废原因，必填"></textarea><div class="inline-error" data-user-coupon-void-error hidden>请填写作废原因后再确认。</div><div class="btn-row"><button class="btn" data-close-modal>取消</button><button class="btn primary" data-user-coupon-void data-toast="用户券已作废，预算占用已释放">确认作废</button></div></div>
+    </section>
+  </div>
+</main>
+      </section>
+    </div>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
