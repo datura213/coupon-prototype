@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>发放任务明细 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="backend-surface">
+
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../../index.html"><span class="brand-mark">券</span><span>优惠券中台</span></a>
+        <a class="nav-item" href="../../pages/backend/budget-pools.html"><span>预算池管理</span></a>
+<a class="nav-item" href="../../pages/backend/coupon-batches.html"><span>券批次管理</span></a>
+<a class="nav-item" href="../../pages/backend/approvals.html"><span>审批管理</span></a>
+<a class="nav-item" href="../../pages/backend/external-scenes.html"><span>外部发券场景</span></a>
+        <div class="nav-group-title">发放与查询</div>
+        <a class="nav-item active" href="../../pages/backend/issue-tasks.html"><span>发放任务</span></a>
+<a class="nav-item" href="../../pages/backend/user-records.html"><span>用户券记录</span></a>
+<a class="nav-item" href="../../pages/backend/redeem-records.html"><span>核销记录</span></a>
+<a class="nav-item" href="../../pages/backend/config.html"><span>基础规则配置</span></a>
+        
+      </aside>
+      <section class="workspace">
+        <header class="topbar">
+          <div class="topbar-links"><a href="../../index.html">原型首页</a><a href="../../pages/app/coupon-center.html">App 侧原型</a></div>
+          <div class="operator"><span>原型预览</span><span class="avatar">券</span></div>
+        </header>
+        <main class="content"><div class="page-head">
+    <div><h1>发放任务明细</h1><div class="sub">展示当前任务下全部发放明细，支持按处理结果和用户信息筛选检索。</div></div>
+    <div class="btn-row"><a class="btn" href="../../pages/backend/issue-tasks.html" data-return-link>返回</a></div>
+  </div><section class="panel"><div class="panel-head">任务信息</div><div class="panel-body desc-list"><div class="desc-row"><span>任务 ID</span><b>T20260708007</b></div><div class="desc-row"><span>任务名称</span><b>平台系统-coupon_issue_standard调用</b></div><div class="desc-row"><span>触发方式</span><b>外部接口调用</b></div><div class="desc-row"><span>业务调用事件 ID</span><b>standard_20260708_0007</b></div><div class="desc-row"><span>外部发券场景</span><b>平台系统 / coupon_issue_standard</b></div><div class="desc-row"><span>目标券批次</span><b>CB20260708021 平台通用自动发券</b></div><div class="desc-row"><span>券有效期规则</span><b>领取后 7 天</b></div><div class="desc-row"><span>任务状态</span><b><span class="tag red">失败</span></b></div></div></section><section class="panel" style="margin-top:14px;" data-issue-detail-filter><div class="panel-head">发放明细</div><div class="panel-body"><div class="filter-bar" style="grid-template-columns:1.35fr .8fr .8fr auto;"><input data-issue-detail-keyword placeholder="用户 ID / 手机号 / 用户券 ID / 业务调用事件 ID"><select data-issue-detail-status><option value="">全部处理结果</option><option>待执行</option><option>执行中</option><option>成功</option><option>失败</option></select><select data-issue-detail-retry><option value="">全部重试状态</option><option value="否">未重试</option><option value="是">已重试</option></select><button class="btn primary" type="button" data-issue-detail-filter-action>查询</button></div><div class="table-scroll" data-scroll-hint="左右滑动查看更多字段"><table class="data-table" style="--table-min-width:1452px"><tr><th>发放明细 ID</th><th>用户 ID</th><th>手机号</th><th>用户券 ID</th><th>业务调用事件 ID</th><th>明细状态</th><th>失败原因</th><th>发放时间</th><th>用户券实际有效期</th><th>重试次数</th><th>最近重试时间</th></tr><tr data-issue-detail-row data-detail-status="失败" data-detail-retry="否"><td>D20260708007001</td><td>u_800701</td><td>-</td><td>-</td><td>standard_20260708_0007</td><td><span class="tag red">失败</span></td><td>库存不足，整批未发放</td><td>-</td><td>-</td><td>0</td><td>-</td></tr><tr data-issue-detail-row data-detail-status="失败" data-detail-retry="否"><td>D20260708007002</td><td>u_800702</td><td>-</td><td>-</td><td>standard_20260708_0007</td><td><span class="tag red">失败</span></td><td>库存不足，整批未发放</td><td>-</td><td>-</td><td>0</td><td>-</td></tr><tr data-issue-detail-row data-detail-status="失败" data-detail-retry="否"><td>D20260708007003</td><td>u_800703</td><td>-</td><td>-</td><td>standard_20260708_0007</td><td><span class="tag red">失败</span></td><td>库存不足，整批未发放</td><td>-</td><td>-</td><td>0</td><td>-</td></tr><tr data-issue-detail-row data-detail-status="失败" data-detail-retry="否"><td>D20260708007004</td><td>u_800704</td><td>-</td><td>-</td><td>standard_20260708_0007</td><td><span class="tag red">失败</span></td><td>库存不足，整批未发放</td><td>-</td><td>-</td><td>0</td><td>-</td></tr><tr data-issue-detail-row data-detail-status="失败" data-detail-retry="否"><td>D20260708007005</td><td>u_800705</td><td>-</td><td>-</td><td>standard_20260708_0007</td><td><span class="tag red">失败</span></td><td>库存不足，整批未发放</td><td>-</td><td>-</td><td>0</td><td>-</td></tr></table></div></div></section></main>
+      </section>
+    </div>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
