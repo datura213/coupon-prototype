@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>券批次审核详情 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="backend-surface">
+
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../../index.html"><span class="brand-mark">券</span><span>优惠券中台</span></a>
+        <a class="nav-item" href="../../pages/backend/budget-pools.html"><span>预算池管理</span></a>
+<a class="nav-item" href="../../pages/backend/coupon-batches.html"><span>券批次管理</span></a>
+<a class="nav-item active" href="../../pages/backend/approvals.html"><span>审批管理</span></a>
+<a class="nav-item" href="../../pages/backend/external-scenes.html"><span>外部发券场景</span></a>
+        <div class="nav-group-title">发放与查询</div>
+        <a class="nav-item" href="../../pages/backend/issue-tasks.html"><span>发放任务</span></a>
+<a class="nav-item" href="../../pages/backend/user-records.html"><span>用户券记录</span></a>
+<a class="nav-item" href="../../pages/backend/redeem-records.html"><span>核销记录</span></a>
+<a class="nav-item" href="../../pages/backend/config.html"><span>基础规则配置</span></a>
+        
+      </aside>
+      <section class="workspace">
+        <header class="topbar">
+          <div class="topbar-links"><a href="../../index.html">原型首页</a><a href="../../pages/app/coupon-center.html">App 侧原型</a></div>
+          <div class="operator"><span>原型预览</span><span class="avatar">券</span></div>
+        </header>
+        <main class="content"><div class="page-head">
+    <div><h1>券批次审核详情</h1><div class="sub">审核创建页提交的券批次审批快照。</div></div>
+    <div class="btn-row"><a class="btn" href="../../pages/backend/approvals.html" data-return-link>返回</a><button class="btn soft-red" data-open-modal="#reject-CB20260714005">审核驳回</button><button class="btn primary" data-toast="券批次审核通过，已发布" data-return-redirect="../../pages/backend/approvals.html">审核通过</button></div>
+  </div><div class="grid-2"><div class="stack"><section class="panel"><div class="panel-head">基础信息</div><div class="panel-body desc-list"><div class="desc-row"><span>券批次 ID</span><b>CB20260714005</b></div><div class="desc-row"><span>券名称</span><b>电影票购票券</b></div><div class="desc-row"><span>权益类型</span><b>现金优惠券</b></div><div class="desc-row"><span>券类型</span><b>固定抵扣券</b></div><div class="desc-row"><span>关联预算池</span><b>平台通用营销预算池</b></div><div class="desc-row"><span>成本归属</span><b>平台</b></div><div class="desc-row"><span>可领取/发放时间</span><b>2026-07-15 至 2026-08-31</b></div></div></section><section class="panel"><div class="panel-head">适用范围</div><div class="panel-body desc-list"><div class="desc-row"><span>适用范围</span><b>指定业务线：电影票购买</b></div></div></section><section class="panel"><div class="panel-head">券规则与有效期</div><div class="panel-body desc-list"><div class="desc-row"><span>券规则</span><b>减 15.00 元，满 60.00 元可用</b></div><div class="desc-row"><span>券有效期</span><b>领取后 7 天</b></div></div></section><section class="panel"><div class="panel-head">发放配置</div><div class="panel-body desc-list"><div class="desc-row"><span>发放方式</span><b>运营定向发券</b></div></div></section></div><div class="stack"><section class="panel"><div class="panel-head">预算与库存</div><div class="panel-body desc-list"><div class="desc-row"><span>总库存</span><b>3,000</b></div><div class="desc-row"><span>批次预算上限</span><b>45,000.00 元</b></div><div class="desc-row"><span>理论最大优惠金额</span><b>45,000.00 元</b></div><div class="desc-row"><span>提交时预算池可分配计划额度</span><b>380,000.00 元</b></div></div></section><section class="panel"><div class="panel-head">领取限制</div><div class="panel-body desc-list"><div class="desc-row"><span>每人限领</span><b>1 张</b></div><div class="desc-row"><span>设备限领</span><b>1 张</b></div></div></section><section class="panel"><div class="panel-head">审批信息</div><div class="panel-body desc-list"><div class="desc-row"><span>审批单号</span><b>APC20260714005</b></div><div class="desc-row"><span>申请人</span><b>赵运营</b></div><div class="desc-row"><span>提交时间</span><b>2026-07-14 11:18</b></div><div class="desc-row"><span>审批图片</span><span class="link" data-open-modal="#proof-CB20260714005">查看图片</span></div><div class="desc-row"><span>备注</span><b>用于电影票业务线拉新。</b></div></div></section></div></div><div class="modal-mask" id="reject-CB20260714005">
+    <section class="modal">
+      <div class="panel-head"><span>审核驳回</span><button class="btn" data-close-modal>关闭</button></div>
+      <div class="panel-body stack"><textarea placeholder="请输入驳回原因，必填"></textarea><div class="btn-row"><button class="btn" data-close-modal>取消</button><button class="btn primary" data-toast="已驳回券批次" data-return-redirect="../../pages/backend/approvals.html">确认驳回</button></div></div>
+    </section>
+  </div><div class="modal-mask" id="proof-CB20260714005">
+    <section class="modal">
+      <div class="panel-head"><span>审批图片</span><button class="btn" data-close-modal>关闭</button></div>
+      <div class="panel-body stack"><div class="upload"><b>movie-fixed.png</b><div class="hint">审批图片预览区域</div></div></div>
+    </section>
+  </div></main>
+      </section>
+    </div>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
