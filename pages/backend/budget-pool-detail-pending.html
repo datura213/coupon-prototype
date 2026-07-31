@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>预算池详情 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="backend-surface">
+
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../../index.html"><span class="brand-mark">券</span><span>优惠券中台</span></a>
+        <a class="nav-item active" href="../../pages/backend/budget-pools.html"><span>预算池管理</span></a>
+<a class="nav-item" href="../../pages/backend/coupon-batches.html"><span>券批次管理</span></a>
+<a class="nav-item" href="../../pages/backend/approvals.html"><span>审批管理</span></a>
+<a class="nav-item" href="../../pages/backend/external-scenes.html"><span>外部发券场景</span></a>
+        <div class="nav-group-title">发放与查询</div>
+        <a class="nav-item" href="../../pages/backend/issue-tasks.html"><span>发放任务</span></a>
+<a class="nav-item" href="../../pages/backend/user-records.html"><span>用户券记录</span></a>
+<a class="nav-item" href="../../pages/backend/redeem-records.html"><span>核销记录</span></a>
+<a class="nav-item" href="../../pages/backend/config.html"><span>基础规则配置</span></a>
+        
+      </aside>
+      <section class="workspace">
+        <header class="topbar">
+          <div class="topbar-links"><a href="../../index.html">原型首页</a><a href="../../pages/app/coupon-center.html">App 侧原型</a></div>
+          <div class="operator"><span>原型预览</span><span class="avatar">券</span></div>
+        </header>
+        <main class="content">
+<div class="page-head">
+    <div><h1>预算池详情</h1><div class="sub">当前预算池待审核，审核通过前不可创建券批次或参与发券。</div></div>
+    <div class="btn-row"><a class="btn" href="../../pages/backend/budget-pools.html" data-return-link>返回</a></div>
+  </div>
+<div class="grid-2 detail-single">
+  <section class="panel"><div class="panel-head"><span>基础信息</span><span class="tag amber">待审核</span></div><div class="panel-body desc-list">
+    <div class="desc-row"><span>预算池 ID</span><b>BP20260707001</b></div>
+    <div class="desc-row"><span>预算池名称</span><b>平台通用营销预算池</b></div>
+    <div class="desc-row"><span>成本归属</span><b>平台</b></div>
+    <div class="desc-row"><span>预算周期</span><b>2026-07-10 至 2026-08-31</b></div>
+    <div class="desc-row"><span>预算池总额</span><b>500,000.00 元</b></div>
+    <div class="desc-row"><span>已分配计划额度</span><b>0.00 元</b></div>
+    <div class="desc-row"><span>可分配计划额度</span><b>0.00 元</b></div>
+    <div class="desc-row"><span>预算已核销成本</span><b>0.00 元</b></div>
+    <div class="desc-row"><span>未结清预算占用</span><b>0.00 元</b></div>
+    <div class="desc-row"><span>预算已承诺总额</span><b>0.00 元</b></div>
+    <div class="desc-row"><span>实际剩余可用预算</span><b>500,000.00 元</b></div>
+    <div class="desc-row"><span>审批单号</span><b>APR-20260707-1842</b></div>
+    <div class="desc-row"><span>审批图片</span><span class="link" data-open-modal="#pendingPoolImage">查看审批图片</span></div>
+  </div></section>
+</div>
+<div class="modal-mask" id="pendingPoolImage">
+    <section class="modal">
+      <div class="panel-head"><span>审批图片</span><button class="btn" data-close-modal>关闭</button></div>
+      <div class="panel-body stack"><div class="upload"><b>approval-proof.png</b><div class="hint">审批图片预览区域</div></div></div>
+    </section>
+  </div>
+</main>
+      </section>
+    </div>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
