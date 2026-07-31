@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>券批次详情 - 优惠券一期原型</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="backend-surface">
+
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../../index.html"><span class="brand-mark">券</span><span>优惠券中台</span></a>
+        <a class="nav-item" href="../../pages/backend/budget-pools.html"><span>预算池管理</span></a>
+<a class="nav-item active" href="../../pages/backend/coupon-batches.html"><span>券批次管理</span></a>
+<a class="nav-item" href="../../pages/backend/approvals.html"><span>审批管理</span></a>
+<a class="nav-item" href="../../pages/backend/external-scenes.html"><span>外部发券场景</span></a>
+        <div class="nav-group-title">发放与查询</div>
+        <a class="nav-item" href="../../pages/backend/issue-tasks.html"><span>发放任务</span></a>
+<a class="nav-item" href="../../pages/backend/user-records.html"><span>用户券记录</span></a>
+<a class="nav-item" href="../../pages/backend/redeem-records.html"><span>核销记录</span></a>
+<a class="nav-item" href="../../pages/backend/config.html"><span>基础规则配置</span></a>
+        
+      </aside>
+      <section class="workspace">
+        <header class="topbar">
+          <div class="topbar-links"><a href="../../index.html">原型首页</a><a href="../../pages/app/coupon-center.html">App 侧原型</a></div>
+          <div class="operator"><span>原型预览</span><span class="avatar">券</span></div>
+        </header>
+        <main class="content">
+<div class="page-head">
+    <div><h1>券批次详情</h1><div class="sub">外部自动发券批次进行中，外部系统每次调用自动发券接口时生成一条发放任务。</div></div>
+    <div class="btn-row"><button class="btn" data-open-modal="#disableExternalBatchModal">停用批次</button><button class="btn soft-red" data-open-modal="#voidExternalBatchModal">作废批次</button><a class="btn" href="../../pages/backend/coupon-batches.html" data-return-link>返回</a></div>
+  </div>
+<div class="grid-2 detail-single">
+  <section class="panel"><div class="panel-head"><span>基础信息</span><span class="tag green">进行中</span></div><div class="panel-body detail-meta-grid"><div class="detail-meta-item"><span>券批次 ID</span><b>CB20260708021</b></div><div class="detail-meta-item"><span>券名称</span><b>平台通用自动发券</b></div><div class="detail-meta-item"><span>权益类型</span><b>现金优惠券</b></div><div class="detail-meta-item"><span>券类型</span><b>固定抵扣券</b></div><div class="detail-meta-item"><span>关联预算池</span><b>平台通用营销预算池</b></div><div class="detail-meta-item"><span>成本归属</span><b>平台营销预算（继承预算池）</b></div><div class="detail-meta-item"><span>券批次活动时间</span><b>2026-07-08 至 2026-08-31</b></div><div class="detail-meta-item"><span>发放方式</span><b>外部自动发券</b></div><div class="detail-meta-item"><span>适用模式</span><b>全平台通用</b></div><div class="detail-meta-item"><span>业务场景</span><b>通钻购买、算力购买、电影票购买</b></div><div class="detail-meta-item"><span>抵扣金额</span><b>20.00 元</b></div><div class="detail-meta-item"><span>使用门槛</span><b>满 99.00 元可用</b></div><div class="detail-meta-item"><span>有效期类型</span><b>领取后 N 天</b></div><div class="detail-meta-item"><span>券有效期</span><b>领取后 7 天有效</b></div><div class="detail-meta-item"><span>批次预算上限</span><b>180,000.00 元</b></div><div class="detail-meta-item"><span>当前实际占用</span><b>28,620.00 元</b></div><div class="detail-meta-item"><span>批次剩余预算</span><b>151,380.00 元</b></div><div class="detail-meta-item"><span>每人限领</span><b>1 张</b></div><div class="detail-meta-item"><span>设备限领</span><b>1 张</b></div><div class="detail-meta-item full"><span>使用说明</span><b>一期平台券单个订单仅可使用一张，且不可与业务线其他活动叠加。</b></div><div class="detail-meta-item"><span>审批单号</span><b>APR-20260708-1530</b></div><div class="detail-meta-item"><span>审批状态</span><b>审核通过</b></div><div class="detail-meta-item"><span>审核人</span><b>陈审核</b></div><div class="detail-meta-item"><span>审核时间</span><b>2026-07-10 10:30</b></div><div class="detail-meta-item full"><span>审批图片</span><b>approval-proof.png</b></div></div></section>
+</div>
+
+<section class="panel" style="margin-top:14px;"><div class="panel-head">库存信息</div><div class="panel-body desc-list"><div class="desc-row"><span>总库存</span><b>6,042 张</b></div><div class="desc-row"><span>已发放数量</span><b>5,462 张</b></div><div class="desc-row"><span>剩余库存</span><b>580 张</b></div></div></section>
+<section class="panel" style="margin-top:14px;"><div class="panel-head">发放任务</div><div class="table-scroll" data-scroll-hint="左右滑动查看更多字段"><table class="data-table action-table" style="--table-min-width:1452px"><tr><th>任务 ID</th><th>任务名称</th><th>触发方式</th><th>业务调用事件 ID</th><th>券批次 ID</th><th>应发放明细数</th><th>成功数</th><th>失败数</th><th>任务状态</th><th>最近触发时间</th><th>操作</th></tr><tr data-issue-task-row data-task-trigger="外部接口调用" data-task-status="成功" data-task-batch="CB20260708021"><td>T20260708001</td><td>平台系统-coupon_issue_standard调用</td><td>外部接口调用</td><td>standard_20260708_0001</td><td>CB20260708021</td><td>1</td><td>1</td><td>0</td><td><span class="tag green">成功</span></td><td>2026-07-08 15:20</td><td><a class="link" href="../../pages/backend/issue-task-detail-T20260708001.html?return=issue-tasks">查看明细</a></td></tr><tr data-issue-task-row data-task-trigger="外部接口调用" data-task-status="失败" data-task-batch="CB20260708021"><td>T20260708002</td><td>平台系统-coupon_issue_standard调用</td><td>外部接口调用</td><td>standard_20260708_0002</td><td>CB20260708021</td><td>1</td><td>0</td><td>1</td><td><span class="tag red">失败</span></td><td>2026-07-08 15:32</td><td><span class="link" data-toast="已发起重试">重试</span><a class="link" href="../../pages/backend/issue-task-detail-T20260708002.html?return=issue-tasks">查看明细</a></td></tr><tr data-issue-task-row data-task-trigger="外部接口调用" data-task-status="成功" data-task-batch="CB20260708021"><td>T20260708003</td><td>平台系统-coupon_issue_standard调用</td><td>外部接口调用</td><td>standard_20260708_0003</td><td>CB20260708021</td><td>820</td><td>820</td><td>0</td><td><span class="tag green">成功</span></td><td>2026-07-08 15:45</td><td><a class="link" href="../../pages/backend/issue-task-detail-T20260708003.html?return=issue-tasks">查看明细</a></td></tr><tr data-issue-task-row data-task-trigger="外部接口调用" data-task-status="部分失败" data-task-batch="CB20260708021"><td>T20260708004</td><td>平台系统-coupon_issue_standard调用</td><td>外部接口调用</td><td>standard_20260708_0004</td><td>CB20260708021</td><td>622</td><td>610</td><td>12</td><td><span class="tag amber">部分失败</span></td><td>2026-07-08 16:05</td><td><span class="link" data-toast="已发起重试">重试失败明细</span><a class="link" href="../../pages/backend/issue-task-detail-T20260708004.html?return=issue-tasks">查看明细</a></td></tr><tr data-issue-task-row data-task-trigger="外部接口调用" data-task-status="待执行" data-task-batch="CB20260708021"><td>T20260708005</td><td>平台系统-coupon_issue_standard调用</td><td>外部接口调用</td><td>standard_20260708_0005</td><td>CB20260708021</td><td>3</td><td>0</td><td>0</td><td><span class="tag gray">待执行</span></td><td>2026-07-08 16:18</td><td><a class="link" href="../../pages/backend/issue-task-detail-T20260708005.html?return=issue-tasks">查看明细</a></td></tr><tr data-issue-task-row data-task-trigger="外部接口调用" data-task-status="执行中" data-task-batch="CB20260708021"><td>T20260708006</td><td>平台系统-coupon_issue_standard调用</td><td>外部接口调用</td><td>standard_20260708_0006</td><td>CB20260708021</td><td>240</td><td>0</td><td>0</td><td><span class="tag blue">执行中</span></td><td>2026-07-08 16:26</td><td><a class="link" href="../../pages/backend/issue-task-detail-T20260708006.html?return=issue-tasks">查看明细</a></td></tr><tr data-issue-task-row data-task-trigger="外部接口调用" data-task-status="失败" data-task-batch="CB20260708021"><td>T20260708007</td><td>平台系统-coupon_issue_standard调用</td><td>外部接口调用</td><td>standard_20260708_0007</td><td>CB20260708021</td><td>5</td><td>0</td><td>5</td><td><span class="tag red">失败</span></td><td>2026-07-08 16:40</td><td><span class="link" data-toast="已发起重试">重试</span><a class="link" href="../../pages/backend/issue-task-detail-T20260708007.html?return=issue-tasks">查看明细</a></td></tr></table></div></section>
+<section class="panel" style="margin-top:14px;"><div class="panel-head">用户券记录</div><div class="table-scroll" data-scroll-hint="左右滑动查看更多字段"><table class="data-table action-table" style="--table-min-width:1056px"><tr><th>用户券 ID</th><th>用户 ID</th><th>手机号</th><th>券名称</th><th>用户券状态</th><th>到账时间</th><th>用户券实际有效期</th><th>操作</th></tr><tr><td>UC20260708001</td><td>u_880010</td><td>13600000000</td><td>平台通用自动发券</td><td><span class="tag green">待使用</span></td><td>2026-07-08 15:20</td><td>2026-07-08 至 2026-07-15</td><td><a class="link" href="../../pages/backend/user-records.html?batch=UC20260708001">查看</a></td></tr><tr><td>UC20260708003</td><td>u_880012</td><td>13600000002</td><td>平台通用自动发券</td><td><span class="tag green">待使用</span></td><td>2026-07-08 15:45</td><td>2026-07-08 至 2026-07-15</td><td><a class="link" href="../../pages/backend/user-records.html?batch=UC20260708003">查看</a></td></tr></table></div></section>
+<section class="panel" style="margin-top:14px;"><div class="panel-head">数据统计</div><div class="panel-body"><div class="grid-4"><div class="stat-card"><span>发券数</span><strong>1,431</strong></div><div class="stat-card"><span>失败数</span><strong>18</strong></div><div class="stat-card"><span>当前实际占用</span><strong>28,620</strong></div><div class="stat-card"><span>预算剩余</span><strong>151,380</strong></div></div></div></section>
+<div class="modal-mask" id="disableExternalBatchModal">
+    <section class="modal">
+      <div class="panel-head"><span>停用批次确认</span><button class="btn" data-close-modal>关闭</button></div>
+      <div class="panel-body stack"><div class="alert">停用后，外部系统调用自动发券接口将返回批次不可发放。</div><textarea placeholder="请输入停用原因，必填"></textarea><div class="btn-row"><button class="btn" data-close-modal>取消</button><button class="btn primary" data-toast="券批次已停用并记录审计" data-return-redirect="../../pages/backend/coupon-batches.html">确认停用</button></div></div>
+    </section>
+  </div>
+<div class="modal-mask" id="voidExternalBatchModal">
+    <section class="modal">
+      <div class="panel-head"><span>作废批次确认</span><button class="btn" data-close-modal>关闭</button></div>
+      <div class="panel-body stack"><div class="alert">批次作废后，待使用用户券将置为已作废并释放当前实际预算占用。该操作需记录审计。</div><textarea placeholder="请输入作废原因"></textarea><div class="btn-row"><button class="btn" data-close-modal>取消</button><button class="btn primary" data-toast="已提交作废操作" data-return-redirect="../../pages/backend/coupon-batches.html">确认作废</button></div></div>
+    </section>
+  </div>
+</main>
+      </section>
+    </div>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
